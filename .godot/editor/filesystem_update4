@@ -1,3 +1,2 @@
-res://main_scene.tscn
 res://sprites/hero.tscn
-res://sprites/CharacterBody2D.gd
+res://main_scene.tscn
