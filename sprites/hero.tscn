@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://d0prfais6v0l0"]
+
+[ext_resource type="Texture2D" uid="uid://df0pgfj3p7e03" path="res://movements/run/_a_Wanderer_Magican_Spritelist_01.png" id="1_su0cm"]
+[ext_resource type="Script" path="res://sprites/CharacterBody2D.gd" id="1_xf5we"]
+[ext_resource type="Texture2D" uid="uid://cnyyxyr7i4asl" path="res://movements/run/_a_Wanderer_Magican_Spritelist_02.png" id="2_gxjih"]
+[ext_resource type="Texture2D" uid="uid://v3bhtb3cexrc" path="res://movements/run/_a_Wanderer_Magican_Spritelist_03.png" id="3_tavst"]
+[ext_resource type="Texture2D" uid="uid://bhkhryx70nvd7" path="res://movements/run/_a_Wanderer_Magican_Spritelist_04.png" id="4_iptqc"]
+[ext_resource type="Texture2D" uid="uid://by8knpltshs4s" path="res://movements/run/_a_Wanderer_Magican_Spritelist_05.png" id="5_g1vog"]
+[ext_resource type="Texture2D" uid="uid://cmyfmcgbsi35b" path="res://movements/run/_a_Wanderer_Magican_Spritelist_06.png" id="6_s7knn"]
+[ext_resource type="Texture2D" uid="uid://d4eokps3oiexa" path="res://movements/run/_a_Wanderer_Magican_Spritelist_07.png" id="7_88hxw"]
+[ext_resource type="Texture2D" uid="uid://detxbhy0etw7h" path="res://movements/run/_a_Wanderer_Magican_Spritelist_08.png" id="8_n38sk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j8h5c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2371g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_su0cm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gxjih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tavst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iptqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g1vog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s7knn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_88hxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_n38sk")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_xf5we")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(16, 31)
+scale = Vector2(1.95147, 1.95147)
+shape = SubResource("CapsuleShape2D_j8h5c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D/CollisionShape2D"]
+position = Vector2(9.22383, -16.9104)
+scale = Vector2(0.494629, 0.494629)
+sprite_frames = SubResource("SpriteFrames_2371g")
+animation = &"run"
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D/CollisionShape2D/AnimatedSprite2D"]
+position = Vector2(-22.7891, 31.08)
+scale = Vector2(-0.000572711, 39.6425)
+offset = Vector2(0, -200)
+limit_smoothed = true

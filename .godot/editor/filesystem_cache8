@@ -1,0 +1,25 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1701713387
+icon.svg::CompressedTexture2D::2333649811887571586::1701609169::1701609182::1::::<><>::
+main_scene.tscn::PackedScene::1669283979411470694::1701713387::0::1::::<><>::uid://bbf2k0mp0tsc3::::res://images/background/orig  long.png<>uid://d0prfais6v0l0::::res://sprites/hero.tscn<>uid://cgoklb7mwa7r8::::res://images/background/8 long.png
+::res://images/::1701697501
+::res://images/background/::1701714008
+8 long2.png::CompressedTexture2D::3107487374425227434::1701713961::1701714011::1::::<><>::
+8 long.png::CompressedTexture2D::5223502633963605315::1701712125::1701712183::1::::<><>::
+8new.png::CompressedTexture2D::972243498610714719::1701710148::1701710166::1::::<><>::
+orig  long.png::CompressedTexture2D::2468589965182289840::1701713241::1701713252::1::::<><>::
+orig.png::CompressedTexture2D::826175491523940723::1677757838::1701697846::1::::<><>::
+origbig.png::CompressedTexture2D::1160302878627721087::1677757854::1701697521::1::::<><>::
+::res://movements/::1701690829
+::res://movements/run/::1701690843
+_a_Wanderer_Magican_Spritelist_01.png::CompressedTexture2D::7562737460589376430::1701582728::1701690843::1::::<><>::
+_a_Wanderer_Magican_Spritelist_02.png::CompressedTexture2D::5736340970152108695::1701582730::1701690843::1::::<><>::
+_a_Wanderer_Magican_Spritelist_03.png::CompressedTexture2D::1531842511825960608::1701582730::1701690843::1::::<><>::
+_a_Wanderer_Magican_Spritelist_04.png::CompressedTexture2D::2898843041724456338::1701582730::1701690843::1::::<><>::
+_a_Wanderer_Magican_Spritelist_05.png::CompressedTexture2D::4139708587869003948::1701582730::1701690843::1::::<><>::
+_a_Wanderer_Magican_Spritelist_06.png::CompressedTexture2D::5664977686016080493::1701582730::1701690843::1::::<><>::
+_a_Wanderer_Magican_Spritelist_07.png::CompressedTexture2D::9203864740384212926::1701582732::1701690843::1::::<><>::
+_a_Wanderer_Magican_Spritelist_08.png::CompressedTexture2D::7480639285466863255::1701582728::1701690843::1::::<><>::
+::res://sprites/::1701713387
+CharacterBody2D.gd::GDScript::-1::1701708482::0::1::::<>CharacterBody2D<>::
+hero.tscn::PackedScene::8945989939406117835::1701713387::0::1::::<><>::uid://df0pgfj3p7e03::::res://movements/run/_a_Wanderer_Magican_Spritelist_01.png<>res://sprites/CharacterBody2D.gd<>uid://cnyyxyr7i4asl::::res://movements/run/_a_Wanderer_Magican_Spritelist_02.png<>uid://v3bhtb3cexrc::::res://movements/run/_a_Wanderer_Magican_Spritelist_03.png<>uid://bhkhryx70nvd7::::res://movements/run/_a_Wanderer_Magican_Spritelist_04.png<>uid://by8knpltshs4s::::res://movements/run/_a_Wanderer_Magican_Spritelist_05.png<>uid://cmyfmcgbsi35b::::res://movements/run/_a_Wanderer_Magican_Spritelist_06.png<>uid://d4eokps3oiexa::::res://movements/run/_a_Wanderer_Magican_Spritelist_07.png<>uid://detxbhy0etw7h::::res://movements/run/_a_Wanderer_Magican_Spritelist_08.png
