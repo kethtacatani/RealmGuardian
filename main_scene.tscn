@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://x1u4l6nmc63c"]
+[gd_scene load_steps=7 format=3 uid="uid://x1u4l6nmc63c"]
 
 [ext_resource type="Texture2D" uid="uid://bbf2k0mp0tsc3" path="res://images/background/orig  long.png" id="1_3styl"]
 [ext_resource type="PackedScene" uid="uid://d0prfais6v0l0" path="res://sprites/hero.tscn" id="1_o6tn1"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7canv"]
 size = Vector2(18911.8, 129)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rbug"]
+size = Vector2(108, 1726.5)
 
 [node name="Node2D" type="Node2D"]
 
@@ -36,8 +39,16 @@ scale = Vector2(1.03523, 1)
 shape = SubResource("RectangleShape2D_7canv")
 
 [node name="Node2D" parent="StaticBody2D" instance=ExtResource("1_o6tn1")]
-position = Vector2(-308, 249)
+position = Vector2(142, 303)
 scale = Vector2(2.67137, 2.67137)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-940, 177)
+shape = SubResource("RectangleShape2D_2rbug")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(16588, -382.75)
+shape = SubResource("RectangleShape2D_2rbug")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 offset_left = -888.0
