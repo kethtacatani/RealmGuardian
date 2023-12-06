@@ -1,2 +1,4 @@
 res://sprites/hero.tscn
 res://main_scene.tscn
+res://movements/idle_left/sprites_01 copy 5.png
+res://sprites/CharacterBody2D.gd
