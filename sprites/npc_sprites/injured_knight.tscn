@@ -1,0 +1,93 @@
+[gd_scene load_steps=12 format=3 uid="uid://b0mga28lj3ruh"]
+
+[ext_resource type="Script" path="res://sprites/npc_sprties/injured_knight.gd" id="1_atpsr"]
+[ext_resource type="Texture2D" uid="uid://day446ebhv06c" path="res://sprites/npc_sprites/almost Dead.png" id="2_l5mgy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q0dsl"]
+radius = 126.985
+height = 1386.17
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ku433"]
+atlas = ExtResource("2_l5mgy")
+region = Rect2(160, 0, 80, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_143ds"]
+atlas = ExtResource("2_l5mgy")
+region = Rect2(240, 0, 80, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hi48w"]
+atlas = ExtResource("2_l5mgy")
+region = Rect2(320, 0, 80, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fno28"]
+atlas = ExtResource("2_l5mgy")
+region = Rect2(400, 0, 80, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5t1o"]
+atlas = ExtResource("2_l5mgy")
+region = Rect2(0, 0, 80, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej27w"]
+atlas = ExtResource("2_l5mgy")
+region = Rect2(80, 0, 80, 86)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8no8t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku433")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_143ds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hi48w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fno28")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5t1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej27w")
+}],
+"loop": true,
+"name": &"injured",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tjmo"]
+size = Vector2(29, 47)
+
+[node name="injured_knight" type="CharacterBody2D"]
+script = ExtResource("1_atpsr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -252)
+scale = Vector2(-0.0866245, 0.0100997)
+shape = SubResource("CapsuleShape2D_q0dsl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(-23.0882, 23664)
+rotation = 3.14159
+scale = Vector2(6.46531, -55.4523)
+sprite_frames = SubResource("SpriteFrames_8no8t")
+animation = &"dead"
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4.5, -12.5)
+shape = SubResource("RectangleShape2D_8tjmo")
+debug_color = Color(0.94902, 0, 0.580392, 0.419608)
+
+[connection signal="animation_finished" from="CollisionShape2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

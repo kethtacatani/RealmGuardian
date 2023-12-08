@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvg3vf0x2wtuv"
-path="res://.godot/imported/Fire_Warrior-Sheet.png-05d0fe7a0d98e689ba2b685030e43f09.ctex"
+uid="uid://bpo1wog1qwc8x"
+path="res://.godot/imported/healthbar_progress.png-0bba3d62630ab992d95aceb89dba7bcd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://new/Fire_Warrior-Sheet.png"
-dest_files=["res://.godot/imported/Fire_Warrior-Sheet.png-05d0fe7a0d98e689ba2b685030e43f09.ctex"]
+source_file="res://images/gui/healthbar_progress.png"
+dest_files=["res://.godot/imported/healthbar_progress.png-0bba3d62630ab992d95aceb89dba7bcd.ctex"]
 
 [params]
 

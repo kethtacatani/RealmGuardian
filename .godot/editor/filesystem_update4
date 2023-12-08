@@ -1,4 +1,7 @@
-res://sprites/hero.tscn
 res://main_scene.tscn
-res://movements/idle_left/sprites_01 copy 5.png
-res://sprites/CharacterBody2D.gd
+res://global.gd
+res://sprites/hero_sprite/hero.gd
+res://sprites/enemy_sprites/enemy_goblini.tscn
+res://sprites/hero_sprite/hero.tscn
+res://main_scene.gd
+res://HealthBar.gd

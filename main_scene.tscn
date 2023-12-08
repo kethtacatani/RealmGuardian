@@ -1,9 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://x1u4l6nmc63c"]
+[gd_scene load_steps=14 format=3 uid="uid://x1u4l6nmc63c"]
 
 [ext_resource type="Texture2D" uid="uid://bbf2k0mp0tsc3" path="res://images/background/orig  long.png" id="1_3styl"]
-[ext_resource type="PackedScene" uid="uid://d0prfais6v0l0" path="res://sprites/hero.tscn" id="1_o6tn1"]
+[ext_resource type="PackedScene" uid="uid://d0prfais6v0l0" path="res://sprites/hero_sprite/hero.tscn" id="1_o6tn1"]
+[ext_resource type="PackedScene" uid="uid://b0mga28lj3ruh" path="res://sprites/npc_sprites/injured_knight.tscn" id="3_m6t8v"]
 [ext_resource type="Texture2D" uid="uid://cgoklb7mwa7r8" path="res://images/background/8 long.png" id="3_q6pwe"]
 [ext_resource type="Texture2D" uid="uid://bkjj4lxhbj3ys" path="res://images/background/8 long2.png" id="4_3ntcg"]
+[ext_resource type="PackedScene" uid="uid://d3boywo6mhwmc" path="res://sprites/object_sprites/cloud.tscn" id="4_ue5xg"]
+[ext_resource type="PackedScene" uid="uid://c5dpmccf804dl" path="res://sprites/enemy_sprites/enemy_goblini.tscn" id="5_08rp5"]
+[ext_resource type="Texture2D" uid="uid://c2xdansa7f3y0" path="res://images/gui/healthbar.png" id="8_1glrx"]
+[ext_resource type="Texture2D" uid="uid://bpo1wog1qwc8x" path="res://images/gui/healthbar_progress.png" id="9_ufl0k"]
+[ext_resource type="Script" path="res://HealthBar.gd" id="10_2s6ys"]
+[ext_resource type="Texture2D" uid="uid://csk4qehqjitqm" path="res://images/gui/healthbar_transparent.png" id="10_puwuy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7canv"]
 size = Vector2(18911.8, 129)
@@ -38,7 +45,7 @@ position = Vector2(8798, 550.5)
 scale = Vector2(1.03523, 1)
 shape = SubResource("RectangleShape2D_7canv")
 
-[node name="Node2D" parent="StaticBody2D" instance=ExtResource("1_o6tn1")]
+[node name="hero" parent="StaticBody2D" instance=ExtResource("1_o6tn1")]
 position = Vector2(142, 303)
 scale = Vector2(2.67137, 2.67137)
 
@@ -49,6 +56,18 @@ shape = SubResource("RectangleShape2D_2rbug")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(16588, -382.75)
 shape = SubResource("RectangleShape2D_2rbug")
+
+[node name="AnimatedSprite2D" parent="StaticBody2D" instance=ExtResource("4_ue5xg")]
+position = Vector2(1444, 338)
+scale = Vector2(1.40184, 1.40184)
+
+[node name="injured_knight" parent="StaticBody2D" instance=ExtResource("3_m6t8v")]
+position = Vector2(1434, 429)
+scale = Vector2(4.54799, 4.54799)
+
+[node name="enemy_goblin" parent="StaticBody2D" instance=ExtResource("5_08rp5")]
+position = Vector2(3207, 426)
+scale = Vector2(1.11274, 1.11274)
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 offset_left = -888.0
@@ -65,3 +84,59 @@ offset_right = 9547.0
 offset_bottom = -564.0
 scale = Vector2(5.04209, 5.04209)
 texture = ExtResource("4_3ntcg")
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="Control" parent="GUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 356.0
+offset_top = 208.0
+offset_right = 396.0
+offset_bottom = 248.0
+scale = Vector2(1.17965, 1.17965)
+
+[node name="TextureRect" type="TextureRect" parent="GUI/HealthBar"]
+layout_mode = 0
+offset_left = -283.0
+offset_top = -153.0
+offset_right = 444.0
+offset_bottom = 150.0
+scale = Vector2(0.368221, 0.368221)
+texture = ExtResource("8_1glrx")
+
+[node name="HealthBar" type="TextureProgressBar" parent="GUI/HealthBar/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 216.038
+offset_top = 136.948
+offset_right = 216.038
+offset_bottom = 136.948
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.646555, 0.198347)
+value = 95.0
+nine_patch_stretch = true
+texture_progress = ExtResource("9_ufl0k")
+tint_progress = Color(0.694118, 0, 0, 1)
+script = ExtResource("10_2s6ys")
+
+[node name="Timer" type="Timer" parent="GUI/HealthBar/TextureRect"]
+
+[node name="HealthBarNum" type="Label" parent="GUI/HealthBar/TextureRect"]
+layout_mode = 0
+offset_left = 89.4186
+offset_top = 146.157
+offset_right = 129.419
+offset_bottom = 169.157
+
+[node name="TextureRect2" type="TextureRect" parent="GUI/HealthBar"]
+layout_mode = 0
+offset_left = -283.0
+offset_top = -153.0
+offset_right = 444.0
+offset_bottom = 150.0
+scale = Vector2(0.368221, 0.368221)
+texture = ExtResource("10_puwuy")

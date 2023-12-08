@@ -2,9 +2,8 @@ extends CharacterBody2D
 
 
 
-#commnet  
-const SPEED = 400.0
-const JUMP_VELOCITY = -700.0
+var SPEED = 380.0
+var JUMP_VELOCITY = -500.0
 var prevX=0
 var prevY=0
 var has_double_jump=false
@@ -12,6 +11,8 @@ var animation_locked= false
 var direction
 var was_in_air= false
 var facing_right=true
+var new_game=false
+var health_bar
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -19,6 +20,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 @onready var anim= get_node("CollisionShape2D/AnimatedSprite2D")
+
+
 func _ready():	
 	anim.play('idle')
 	
@@ -26,8 +29,14 @@ func _ready():
 
 func _physics_process(delta):
 	# Add the gravity.
-	print("x: ",prevX)
-	print("y: ",prevY)
+#	print("x: ",prevX)
+#	print("y: ",prevY)
+	
+	if new_game && is_on_floor():
+		new_game=false
+		DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"),"start")
+			
+		
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		was_in_air=true
@@ -37,6 +46,16 @@ func _physics_process(delta):
 		if was_in_air:
 			land()	
 			was_in_air=false;	
+		
+	if global.is_in_dialogue:
+		if is_on_floor():	
+			anim.play("idle")
+			animation_locked=false
+			print("id")
+			return
+	else:
+			print("nid")
+			
 
 	# Handle Jump.
 	
@@ -51,8 +70,7 @@ func _physics_process(delta):
 	direction = Input.get_axis("ui_left", "ui_right")		
 	#animation for jump
 	if not is_on_floor():
-		jump_anim(delta)
-#		jump_anim(delta)	
+		jump_anim()
 	prevX= position.x
 	prevY=position.y
 
@@ -72,7 +90,7 @@ func update_animation():
 			velocity.x = direction * SPEED
 			if is_on_floor():
 				anim.play('run')	
-				print(direction)	
+#				print(direction)	
 		else:
 			if is_on_floor():
 				if facing_right:
@@ -94,7 +112,7 @@ func update_facing_sprite():
 			anim.flip_h = false # Otherwise, don't flip
 			facing_right=true
 			
-func jump_anim(delta):
+func jump_anim():
 	if not animation_locked:
 		if position.y<prevY:
 			anim.play("jump_up_loop")
@@ -116,6 +134,7 @@ func double_jump():
 	
 func land():
 	anim.play("jump_down")
+	velocity.x = move_toward(velocity.x, 0, SPEED)
 	animation_locked=true
 	
 	
@@ -127,8 +146,12 @@ func _on_animated_sprite_2d_animation_finished():
 		animation_locked=false
 	if(anim.animation=="jump_up"):
 		animation_locked=false
-		print("finished")
+#		print("finished")
 	if(anim.animation=="double_jump"):
 		animation_locked=false
-		print("finished")
+		
+
+
+
+	
 		

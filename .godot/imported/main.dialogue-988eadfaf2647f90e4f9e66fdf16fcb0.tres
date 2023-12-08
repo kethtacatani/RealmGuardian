@@ -1,0 +1,441 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_0errr"]
+
+[resource]
+script = ExtResource("1_0errr")
+using_states = PackedStringArray()
+titles = {
+"injured_knight": "2",
+"start": "24"
+}
+character_names = PackedStringArray("Injured Knight", "Prince Aelarion")
+first_title = "2"
+lines = {
+"1": {
+"id": "1",
+"next_id": "2",
+"text": "injured_knight",
+"type": "title"
+},
+"10": {
+"character": "Prince Aelarion",
+"character_replacements": Array[Dictionary]([]),
+"id": "10",
+"next_id": "11",
+"parent_id": "9",
+"tags": PackedStringArray(),
+"text": "I'll do what I can to help. Where can I find her?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "I'll do what I can to help. Where can I find her?",
+"type": "dialogue"
+},
+"11": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "11",
+"next_id": "12",
+"next_id_after": "21",
+"parent_id": "9",
+"responses": PackedStringArray("11"),
+"tags": PackedStringArray(),
+"text": "Continue...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Continue...",
+"type": "response"
+},
+"12": {
+"character": "Injured Knight",
+"character_replacements": Array[Dictionary]([]),
+"id": "12",
+"next_id": "13",
+"parent_id": "11",
+"tags": PackedStringArray(),
+"text": "Seek the old ruins... east of here... but beware... the darknesss is already here 
+Choose wisely... she... will grant power to you...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Seek the old ruins... east of here... but beware... the darknesss is already here 
+Choose wisely... she... will grant power to you...",
+"type": "dialogue"
+},
+"13": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "13",
+"next_id": "14",
+"next_id_after": "21",
+"parent_id": "11",
+"responses": PackedStringArray("13"),
+"tags": PackedStringArray(),
+"text": "Continue...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Continue...",
+"type": "response"
+},
+"14": {
+"character": "Injured Knight",
+"character_replacements": Array[Dictionary]([]),
+"id": "14",
+"next_id": "15",
+"parent_id": "13",
+"tags": PackedStringArray(),
+"text": "I have no time left... farewell my prince...
+ Rise again Asgradia...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "I have no time left... farewell my prince...
+ Rise again Asgradia...",
+"type": "dialogue"
+},
+"15": {
+"id": "15",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "global"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "is_in_dialogue"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "false"
+}])
+},
+"next_id": "16",
+"parent_id": "13",
+"type": "mutation"
+},
+"16": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "16",
+"next_id": "21",
+"next_id_after": "21",
+"parent_id": "13",
+"responses": PackedStringArray("16"),
+"tags": PackedStringArray(),
+"text": "Close",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Close",
+"type": "response"
+},
+"2": {
+"condition": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "global"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "knight_dead"
+}, {
+"type": "comparison",
+"value": "=="
+}, {
+"type": "variable",
+"value": "false"
+}])
+},
+"id": "2",
+"next_conditional_id": "21",
+"next_id": "3",
+"next_id_after": "21",
+"type": "condition"
+},
+"21": {
+"id": "21",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"23": {
+"id": "23",
+"next_id": "24",
+"text": "start",
+"type": "title"
+},
+"24": {
+"id": "24",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "global"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "is_in_dialogue"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "true"
+}])
+},
+"next_id": "25",
+"type": "mutation"
+},
+"25": {
+"character": "Prince Aelarion",
+"character_replacements": Array[Dictionary]([]),
+"id": "25",
+"next_id": "26",
+"tags": PackedStringArray(),
+"text": "Back in my home realm... it feels familiar yet different...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Back in my home realm... it feels familiar yet different...",
+"type": "dialogue"
+},
+"26": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "26",
+"next_id": "27",
+"next_id_after": "end!",
+"responses": PackedStringArray("26"),
+"tags": PackedStringArray(),
+"text": "Continue...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Continue...",
+"type": "response"
+},
+"27": {
+"character": "Prince Aelarion",
+"character_replacements": Array[Dictionary]([]),
+"id": "27",
+"next_id": "28",
+"parent_id": "26",
+"tags": PackedStringArray(),
+"text": "I wonder how things have been here while I was away...?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "I wonder how things have been here while I was away...?",
+"type": "dialogue"
+},
+"28": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "28",
+"next_id": "29",
+"next_id_after": "end!",
+"parent_id": "26",
+"responses": PackedStringArray("28"),
+"tags": PackedStringArray(),
+"text": "Continue...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Continue...",
+"type": "response"
+},
+"29": {
+"character": "Prince Aelarion",
+"character_replacements": Array[Dictionary]([]),
+"id": "29",
+"next_id": "30",
+"parent_id": "28",
+"tags": PackedStringArray(),
+"text": "The journey was intense, learning new things, meeting new people...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "The journey was intense, learning new things, meeting new people...",
+"type": "dialogue"
+},
+"3": {
+"id": "3",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "global"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "is_in_dialogue"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "true"
+}])
+},
+"next_id": "4",
+"parent_id": "2",
+"type": "mutation"
+},
+"30": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "30",
+"next_id": "31",
+"next_id_after": "end!",
+"parent_id": "28",
+"responses": PackedStringArray("30"),
+"tags": PackedStringArray(),
+"text": "Continue...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Continue...",
+"type": "response"
+},
+"31": {
+"character": "Prince Aelarion",
+"character_replacements": Array[Dictionary]([]),
+"id": "31",
+"next_id": "32",
+"parent_id": "30",
+"tags": PackedStringArray(),
+"text": "I hope everything is as I left it, peaceful and unchanged...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "I hope everything is as I left it, peaceful and unchanged...",
+"type": "dialogue"
+},
+"32": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "32",
+"next_id": "33",
+"next_id_after": "end!",
+"parent_id": "30",
+"responses": PackedStringArray("32"),
+"tags": PackedStringArray(),
+"text": "Continue...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Continue...",
+"type": "response"
+},
+"33": {
+"character": "Prince Aelarion",
+"character_replacements": Array[Dictionary]([]),
+"id": "33",
+"next_id": "34",
+"parent_id": "32",
+"tags": PackedStringArray(),
+"text": "It's time to reconnect with my roots, my people...
+I've missed this place...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "It's time to reconnect with my roots, my people...
+I've missed this place...",
+"type": "dialogue"
+},
+"34": {
+"id": "34",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "global"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "is_in_dialogue"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "false"
+}])
+},
+"next_id": "35",
+"parent_id": "32",
+"type": "mutation"
+},
+"35": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "35",
+"next_id": "end!",
+"next_id_after": "end!",
+"parent_id": "32",
+"responses": PackedStringArray("35"),
+"tags": PackedStringArray(),
+"text": "Close",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Close",
+"type": "response"
+},
+"4": {
+"character": "Injured Knight",
+"character_replacements": Array[Dictionary]([]),
+"id": "4",
+"next_id": "5",
+"parent_id": "2",
+"tags": PackedStringArray(),
+"text": "*coughs* You there... Prince Aelarion...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "*coughs* You there... Prince Aelarion...",
+"type": "dialogue"
+},
+"5": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "5",
+"next_id": "6",
+"next_id_after": "21",
+"parent_id": "2",
+"responses": PackedStringArray("5"),
+"tags": PackedStringArray(),
+"text": "Continue...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Continue...",
+"type": "response"
+},
+"6": {
+"character": "Prince Aelarion",
+"character_replacements": Array[Dictionary]([]),
+"id": "6",
+"next_id": "7",
+"parent_id": "5",
+"tags": PackedStringArray(),
+"text": "What happened to you?",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "What happened to you?",
+"type": "dialogue"
+},
+"7": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "7",
+"next_id": "8",
+"next_id_after": "21",
+"parent_id": "5",
+"responses": PackedStringArray("7"),
+"tags": PackedStringArray(),
+"text": "Continue...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Continue...",
+"type": "response"
+},
+"8": {
+"character": "Injured Knight",
+"character_replacements": Array[Dictionary]([]),
+"id": "8",
+"next_id": "9",
+"parent_id": "7",
+"tags": PackedStringArray(),
+"text": "Darkness... appearing... Asgardia... in peril...
+Eleanore... find her... she's our only hope...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Darkness... appearing... Asgardia... in peril...
+Eleanore... find her... she's our only hope...",
+"type": "dialogue"
+},
+"9": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "9",
+"next_id": "10",
+"next_id_after": "21",
+"parent_id": "7",
+"responses": PackedStringArray("9"),
+"tags": PackedStringArray(),
+"text": "Continue...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Continue...",
+"type": "response"
+}
+}
+metadata/dialogue_manager_version = "2.30.0"

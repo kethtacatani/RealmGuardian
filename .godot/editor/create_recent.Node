@@ -1,6 +1,12 @@
-CollisionShape2D
-Camera2D
+Label
+Timer
+TextureProgressBar
 TextureRect
-StaticBody2D
+Control
 AnimatedSprite2D
+CanvasLayer
+CollisionShape2D
 CharacterBody2D
+Area2D
+Camera2D
+StaticBody2D

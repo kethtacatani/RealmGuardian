@@ -1,0 +1,147 @@
+[gd_scene load_steps=22 format=3 uid="uid://c5dpmccf804dl"]
+
+[ext_resource type="Script" path="res://sprites/enemy_sprites/enemy_goblini.gd" id="1_1r8fw"]
+[ext_resource type="Texture2D" uid="uid://0x1qvamaeqod" path="res://images/enemy_sprites/gobline_idle.png" id="1_akijq"]
+[ext_resource type="Texture2D" uid="uid://cduvucndpqa2d" path="res://images/enemy_sprites/goblinr.png" id="1_cl8wt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vsva3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urab6"]
+atlas = ExtResource("1_akijq")
+region = Rect2(0, 0, 128, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvvnf"]
+atlas = ExtResource("1_akijq")
+region = Rect2(128, 0, 128, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecvqp"]
+atlas = ExtResource("1_akijq")
+region = Rect2(256, 0, 128, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8lqy"]
+atlas = ExtResource("1_akijq")
+region = Rect2(0, 144, 128, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8mjy"]
+atlas = ExtResource("1_akijq")
+region = Rect2(128, 144, 128, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1b05c"]
+atlas = ExtResource("1_akijq")
+region = Rect2(256, 144, 128, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5f4t"]
+atlas = ExtResource("1_akijq")
+region = Rect2(0, 288, 128, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4suln"]
+atlas = ExtResource("1_akijq")
+region = Rect2(128, 288, 128, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khf2b"]
+atlas = ExtResource("1_cl8wt")
+region = Rect2(0, 0, 128, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xl42"]
+atlas = ExtResource("1_cl8wt")
+region = Rect2(128, 0, 128, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gm16"]
+atlas = ExtResource("1_cl8wt")
+region = Rect2(256, 0, 128, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhowe"]
+atlas = ExtResource("1_cl8wt")
+region = Rect2(0, 144, 128, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5440w"]
+atlas = ExtResource("1_cl8wt")
+region = Rect2(128, 144, 128, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j4rh"]
+atlas = ExtResource("1_cl8wt")
+region = Rect2(256, 144, 128, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opp4v"]
+atlas = ExtResource("1_cl8wt")
+region = Rect2(0, 288, 128, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut0ph"]
+atlas = ExtResource("1_cl8wt")
+region = Rect2(128, 288, 128, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dlc6k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urab6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvvnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecvqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8lqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8mjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1b05c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5f4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4suln")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khf2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xl42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gm16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhowe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5440w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j4rh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opp4v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ut0ph")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="enemy_goblin" type="CharacterBody2D"]
+script = ExtResource("1_1r8fw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 3)
+scale = Vector2(2.61198, 3.12644)
+shape = SubResource("CapsuleShape2D_vsva3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(1.14855, -0.639705)
+scale = Vector2(0.382851, 0.319853)
+sprite_frames = SubResource("SpriteFrames_dlc6k")
+animation = &"idle"
+flip_h = true
