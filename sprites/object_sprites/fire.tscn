@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpe0mi0txth2q"]
+
+[ext_resource type="Texture2D" uid="uid://c7u0p506cbs51" path="res://movements/attacks/magic_fire.png" id="1_e7cs5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a05xq"]
+radius = 8.0
+
+[node name="Fire" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_a05xq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_e7cs5")

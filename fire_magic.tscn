@@ -1,0 +1,151 @@
+[gd_scene load_steps=17 format=3 uid="uid://c2lpfw2vjwwk3"]
+
+[ext_resource type="Script" path="res://sprites/hero_sprite/FireMagic.gd" id="1_2o2s3"]
+[ext_resource type="Texture2D" uid="uid://cxon6avt2momb" path="res://movements/attacks/Charge_1.png" id="2_i54ly"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28fnx"]
+radius = 5.0
+height = 17.1899
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hl8s"]
+atlas = ExtResource("2_i54ly")
+region = Rect2(320, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y528h"]
+atlas = ExtResource("2_i54ly")
+region = Rect2(384, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x68i"]
+atlas = ExtResource("2_i54ly")
+region = Rect2(448, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6ul7"]
+atlas = ExtResource("2_i54ly")
+region = Rect2(512, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi3is"]
+atlas = ExtResource("2_i54ly")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn7dl"]
+atlas = ExtResource("2_i54ly")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhuwc"]
+atlas = ExtResource("2_i54ly")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_027ae"]
+atlas = ExtResource("2_i54ly")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsp2r"]
+atlas = ExtResource("2_i54ly")
+region = Rect2(256, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnu7w"]
+atlas = ExtResource("2_i54ly")
+region = Rect2(448, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nh8o"]
+atlas = ExtResource("2_i54ly")
+region = Rect2(512, 0, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rbg4d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hl8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y528h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x68i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6ul7")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"fire_hit",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi3is")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn7dl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhuwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_027ae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsp2r")
+}],
+"loop": true,
+"name": &"fire_magic",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnu7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nh8o")
+}],
+"loop": false,
+"name": &"fire_out",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d7o2s"]
+radius = 9.0
+height = 28.0
+
+[node name="FireMagic" type="CharacterBody2D"]
+position = Vector2(0, 8)
+script = ExtResource("1_2o2s3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(49, 12)
+rotation = 1.5708
+scale = Vector2(1.67326, 1.55743)
+shape = SubResource("CapsuleShape2D_28fnx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(1, 5.37185)
+rotation = -1.5708
+scale = Vector2(0.658116, 0.570159)
+sprite_frames = SubResource("SpriteFrames_rbg4d")
+animation = &"fire_hit"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.01
+one_shot = true
+
+[node name="range2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range2"]
+position = Vector2(49, 12)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_d7o2s")
+debug_color = Color(0.898039, 0.2, 0.607843, 0.419608)
+
+[node name="FireDelay" type="Timer" parent="."]
+one_shot = true
+
+[node name="FireOut" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="animation_finished" from="CollisionShape2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="range2" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="FireDelay" to="." method="_on_fire_delay_timeout"]
+[connection signal="timeout" from="FireOut" to="." method="_on_fire_out_timeout"]

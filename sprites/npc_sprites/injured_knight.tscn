@@ -81,7 +81,7 @@ sprite_frames = SubResource("SpriteFrames_8no8t")
 animation = &"dead"
 flip_h = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["non_enemy"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-4.5, -12.5)

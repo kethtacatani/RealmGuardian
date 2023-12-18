@@ -1,11 +1,12 @@
 extends TextureProgressBar
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	value=global.health
+	value = float(global.health)/float(global.max_health) * 100
+
+#	
+	
+
