@@ -1,18 +1,22 @@
 3acdcc5cb6df755358dde907981ccea8
-::res://::1702901464
+::res://::1703075382
 AnimatedSprite2D.gd::GDScript::-1::1701877519::0::1::::<>CharacterBody2D<>::
 DamageIndicator.gd::GDScript::-1::1702729481::0::1::::<>Node2D<>::
-global.gd::GDScript::-1::1702891620::0::1::::<>Node<>::
-Health.gd::GDScript::-1::1702056013::0::1::::<>Label<>::
-HealthBar.gd::GDScript::-1::1702891245::0::1::::<>TextureProgressBar<>::
+fire_magic.tscn::PackedScene::6691569182959239272::1703075034::0::1::::<><>::res://sprites/hero_sprite/FireMagic.gd<>uid://cxon6avt2momb::::res://movements/attacks/Charge_1.png
+global.gd::GDScript::-1::1702983606::0::1::::<>Node<>::
+Health.gd::GDScript::-1::1702972722::0::1::::<>Label<>::
+HealthBar.gd::GDScript::-1::1702972021::0::1::::<>TextureProgressBar<>::
+hit_effect.gd::GDScript::-1::1702974064::0::1::::<>CharacterBody2D<>::
+hit_effect.tscn::PackedScene::3051571224488572934::1702985533::0::1::::<><>::uid://4vrhfl6pvpk3
 icon.svg::CompressedTexture2D::2333649811887571586::1701609169::1701609182::1::::<><>::
+LevelExp.gd::GDScript::-1::1702971411::0::1::::<>TextureProgressBar<>::
 level_label.gd::GDScript::-1::1702054305::0::1::::<>Label<>::
 main.dialogue::Resource::1519588000712012091::1701880620::1701880620::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
 main_scene.gd::GDScript::-1::1702051760::0::1::::<>Node2D<>::
-main_scene.tscn::PackedScene::1669283979411470694::1702901463::0::1::::<><>::uid://bbf2k0mp0tsc3::::res://images/background/orig  long.png<>uid://d0prfais6v0l0::::res://sprites/hero_sprite/hero.tscn<>uid://b0mga28lj3ruh::::res://sprites/npc_sprites/injured_knight.tscn<>uid://cgoklb7mwa7r8::::res://images/background/8 long.png<>uid://bkjj4lxhbj3ys::::res://images/background/8 long2.png<>uid://d3boywo6mhwmc::::res://sprites/object_sprites/cloud.tscn<>uid://c5dpmccf804dl::::res://sprites/enemy_sprites/enemy_goblini.tscn<>uid://c2xdansa7f3y0::::res://images/gui/healthbar.png<>uid://bpo1wog1qwc8x::::res://images/gui/healthbar_progress.png<>res://HealthBar.gd<>uid://csk4qehqjitqm::::res://images/gui/healthbar_transparent.png<>uid://brm1t2uo6pgcu::::res://fonts/alagard.ttf<>res://level_label.gd<>res://Health.gd
-fire_magic.tscn::PackedScene::6691569182959239272::1702901464::0::1::::<><>::res://sprites/hero_sprite/FireMagic.gd<>uid://cxon6avt2momb::::res://movements/attacks/Charge_1.png
+main_scene.tscn::PackedScene::1669283979411470694::1703075034::0::1::::<><>::uid://bbf2k0mp0tsc3::::res://images/background/orig  long.png<>uid://d0prfais6v0l0::::res://sprites/hero_sprite/hero.tscn<>uid://b0mga28lj3ruh::::res://sprites/npc_sprites/injured_knight.tscn<>uid://cgoklb7mwa7r8::::res://images/background/8 long.png<>uid://bkjj4lxhbj3ys::::res://images/background/8 long2.png<>uid://d3boywo6mhwmc::::res://sprites/object_sprites/cloud.tscn<>uid://c5dpmccf804dl::::res://sprites/enemy_sprites/enemy_goblini.tscn<>uid://cep2krsq22ntt::::res://sprites/enemy_sprites/enemy_bird.tscn<>uid://c2xdansa7f3y0::::res://images/gui/healthbar.png<>uid://bpo1wog1qwc8x::::res://images/gui/healthbar_progress.png<>res://HealthBar.gd<>uid://csk4qehqjitqm::::res://images/gui/healthbar_transparent.png<>uid://bsvxi2kftp0ro::::res://images/gui/circle.png<>uid://brm1t2uo6pgcu::::res://fonts/alagard.ttf<>res://level_label.gd<>res://LevelExp.gd<>res://Health.gd
+fire_arrow.tscn::PackedScene::6078805450592094980::1703075382::0::1::::<><>::
 ::res://addons/::1702888794
-floating_number.tscn::PackedScene::4648462457419697043::1702888794::0::1::::<><>::uid://brm1t2uo6pgcu::::res://fonts/alagard.ttf
+floating_number.tscn::PackedScene::4648462457419697043::1702888794::0::1::::<><>::uid://brm1t2uo6pgcu
 ::res://addons/dialogue_manager/::1701857679
 constants.gd::GDScript::-1::1701857678::0::1::::<>Node<>::
 dialogue_label.gd::GDScript::-1::1701857679::0::1::::DialogueLabel<>RichTextLabel<>res://addons/dialogue_manager/assets/icon.svg::
@@ -71,7 +75,7 @@ settings_view.tscn::PackedScene::5839841081119266502::1701857679::0::1::::<><>::
 ::res://fonts/::1702054162
 8-BIT WONDER.TTF::FontFile::8553086890823598115::1702052933::1702052933::1::::<><>::
 alagard.ttf::FontFile::3606017580189151128::1702054157::1702054162::1::::<><>::
-::res://images/::1702060461
+::res://images/::1703063991
 ::res://images/background/::1701714011
 8 long2.png::CompressedTexture2D::3107487374425227434::1701713961::1701714011::1::::<><>::
 8 long.png::CompressedTexture2D::5223502633963605315::1701712125::1701712183::1::::<><>::
@@ -82,7 +86,7 @@ origbig.png::CompressedTexture2D::1160302878627721087::1677757854::1701697521::1
 ::res://images/clouds/::1701876551
 quesiton_cloud0.png::CompressedTexture2D::6098030777908832704::1701876550::1701876551::1::::<><>::
 quesiton_cloud1.png::CompressedTexture2D::4887380178600827824::1701876550::1701876551::1::::<><>::
-::res://images/enemy_sprites/::1702816752
+::res://images/enemy_sprites/::1702980475
 attack.png::CompressedTexture2D::4510151417288701419::1702060455::1702060462::1::::<><>::
 die.png::CompressedTexture2D::2321282624880529289::1702662681::1702662681::1::::<><>::
 gobline_idle.png::CompressedTexture2D::1803810097344345151::1702814463::1702814465::1::::<><>::
@@ -91,12 +95,21 @@ gobline_idle_hammer.png::CompressedTexture2D::1756273887343170067::1702570154::1
 goblinr.png::CompressedTexture2D::5026006351393827241::1701962667::1701962733::1::::<><>::
 hurt.png::CompressedTexture2D::6959797139852317180::1702571844::1702571844::1::::<><>::
 run.png::CompressedTexture2D::2832338846053348713::1702816717::1702816752::1::::<><>::
-::res://images/gui/::1702701029
+::res://images/enemy_sprites/enemy_bird/::1703063992
+attack.png::CompressedTexture2D::5664502842483213969::1702980473::1702980509::1::::<><>::
+bird_die.png::CompressedTexture2D::8799722683365537030::1703063979::1703063992::1::::<><>::
+bird_hurt.png::CompressedTexture2D::8292034705844429296::1703063979::1703063992::1::::<><>::
+enemy_fly.png::CompressedTexture2D::8724256885796770790::1702984030::1702984031::1::::<><>::
+ezgif.com-crop (17).png::CompressedTexture2D::1846165865221757846::1702986249::1702986250::1::::<><>::
+fire.png::CompressedTexture2D::80222327723373588::1702990967::1702990967::1::::<><>::
+fireball.png::CompressedTexture2D::2900054169258857939::1703059059::1703059064::1::::<><>::
+::res://images/gui/::1702970122
+circle.png::CompressedTexture2D::3694584013029491708::1702969167::1702969170::1::::<><>::
 enemy_health_bar_bg.png::CompressedTexture2D::6074992358257839472::1702700999::1702701029::1::::<><>::
 enemy_health_bar_trans.png::CompressedTexture2D::7288410748890508551::1702701024::1702701029::1::::<><>::
-healthbar.png::CompressedTexture2D::6715603695587774561::1702056415::1702056416::1::::<><>::
+healthbar.png::CompressedTexture2D::6715603695587774561::1702969561::1702969561::1::::<><>::
 healthbar_progress.png::CompressedTexture2D::3469773301897558513::1701973652::1701973671::1::::<><>::
-healthbar_transparent.png::CompressedTexture2D::6058673917550450824::1702054326::1702054327::1::::<><>::
+healthbar_transparent.png::CompressedTexture2D::6058673917550450824::1702970081::1702970122::1::::<><>::
 ::res://movements/::1702823946
 ::res://movements/attack1/::1702565633
 sprites_49.png::CompressedTexture2D::2795709920598347464::1702565632::1702565633::1::::<><>::
@@ -106,14 +119,16 @@ sprites_52.png::CompressedTexture2D::3143113307926990902::1702565633::1702565633
 sprites_53.png::CompressedTexture2D::8776852412806038877::1702565633::1702565633::1::::<><>::
 sprites_54.png::CompressedTexture2D::3288588427966009919::1702565633::1702565633::1::::<><>::
 sprites_55.png::CompressedTexture2D::7232144847571474393::1702565632::1702565633::1::::<><>::
-::res://movements/attacks/::1702903260
+::res://movements/attacks/::1703075506
 Attack_2.png::CompressedTexture2D::8935406201504112153::1702823933::1702823947::1::::<><>::
 Charge_1.png::CompressedTexture2D::6416930773475534721::1702834974::1702834975::1::::<><>::
+Charge_2.png::CompressedTexture2D::7632432518516204991::1703075506::1703075507::1::::<><>::
+fire_magic.gd::GDScript::-1::1702885265::0::1::::<>CharacterBody2D<>::
+fire_magic.tscn::PackedScene::2308521191651724541::1702888794::0::1::::<><>::uid://cxon6avt2momb
+hit.png::CompressedTexture2D::2079873368811544164::1702964559::1702964560::1::::<><>::
 Magic_arrow.png::CompressedTexture2D::4618587615675835406::1702822418::1702822418::1::::<><>::
 magic_fire.png::CompressedTexture2D::7061718246344015654::1702836431::1702836432::1::::<><>::
 Magic_sphere.png::CompressedTexture2D::8959045022364292537::1702824970::1702824972::1::::<><>::
-fire_magic.tscn::PackedScene::2308521191651724541::1702888794::0::1::::<><>::uid://cxon6avt2momb::::res://movements/attacks/Charge_1.png<>res://movements/attacks/fire_magic.gd
-fire_magic.gd::GDScript::-1::1702885265::0::1::::<>CharacterBody2D<>::
 Magic_sphere_jump.png::CompressedTexture2D::2130345112687506252::1702903260::1702903267::1::::<><>::
 ::res://movements/dead/::1702562109
 sprites_145.png::CompressedTexture2D::4682919883871491969::1702562109::1702562109::1::::<><>::
@@ -158,24 +173,31 @@ spritte22_06.png::CompressedTexture2D::4635222285551886985::1701851918::17018519
 spritte22_07.png::CompressedTexture2D::3469419114642509117::1701851918::1701851918::1::::<><>::
 spritte22_08.png::CompressedTexture2D::4114703108086350789::1701851918::1701851918::1::::<><>::
 ::res://sprites/::1701962678
-::res://sprites/enemy_sprites/::1702901463
-DamageIndicator.gd::GDScript::-1::1702876902::0::1::::<>Marker2D<>::
-enemy_goblini.gd::GDScript::-1::1702900034::0::1::::<>CharacterBody2D<>::
-enemy_goblini.tscn::PackedScene::6885632102616310237::1702901463::0::1::::<><>::res://sprites/enemy_sprites/enemy_goblini.gd<>uid://0x1qvamaeqod::::res://images/enemy_sprites/gobline_idle.png<>uid://cduvucndpqa2d::::res://images/enemy_sprites/goblinr.png<>uid://b5i0sgl073cit::::res://images/enemy_sprites/attack.png<>uid://0a0tr6pqfgjb::::res://images/enemy_sprites/gobline_idle_hammer.png<>uid://8cpgkwj0wu70::::res://images/enemy_sprites/die.png<>uid://c6fm3vodph6o3::::res://images/enemy_sprites/hurt.png<>uid://bgmahbjk8yng0::::res://images/enemy_sprites/run.png<>uid://css1ibqjbisbw::::res://images/gui/enemy_health_bar_bg.png<>uid://bpo1wog1qwc8x::::res://images/gui/healthbar_progress.png<>res://sprites/enemy_sprites/goblinHealth.gd<>uid://db3tcbtqfvqh8::::res://images/gui/enemy_health_bar_trans.png<>res://sprites/enemy_sprites/DamageIndicator.gd
-goblinHealth.gd::GDScript::-1::1702790755::0::1::::<>TextureProgressBar<>::
-::res://sprites/hero_sprite/::1702901463
+::res://sprites/enemy_sprites/::1703075035
+birdHealth.gd::GDScript::-1::1703069828::0::1::::<>TextureProgressBar<>::
+DamageIndicator.gd::GDScript::-1::1703046337::0::1::::<>Marker2D<>::
+enemy_bird.gd::GDScript::-1::1703074840::0::1::::<>CharacterBody2D<>::
+enemy_bird.tscn::PackedScene::5086220546460528469::1703075034::0::1::::<><>::uid://cmx6sftbnjdh6::::res://images/enemy_sprites/enemy_bird/attack.png<>res://sprites/enemy_sprites/enemy_bird.gd<>uid://bi3awj6h0uvds::::res://sprites/enemy_sprites/enemy_bird_fire.tscn<>uid://dwkdibeynf2ww::::res://images/enemy_sprites/enemy_bird/enemy_fly.png<>uid://dxmwe84kqrc43::::res://images/enemy_sprites/enemy_bird/bird_die.png<>uid://css1ibqjbisbw::::res://images/gui/enemy_health_bar_bg.png<>uid://dqeyun0jcp3ea::::res://images/enemy_sprites/enemy_bird/bird_hurt.png<>uid://db3tcbtqfvqh8::::res://images/gui/enemy_health_bar_trans.png<>uid://bpo1wog1qwc8x::::res://images/gui/healthbar_progress.png<>res://sprites/enemy_sprites/birdHealth.gd
+enemy_bird_fire.gd::GDScript::-1::1703075015::0::1::::<>CharacterBody2D<>::
+enemy_bird_fire.tscn::PackedScene::3005773818328296604::1703075035::0::1::::<><>::res://sprites/enemy_sprites/enemy_bird_fire.gd<>uid://bhk2p6sr7ehhj::::res://images/enemy_sprites/enemy_bird/fireball.png<>uid://be4irawxjmky::::res://images/enemy_sprites/enemy_bird/fire.png<>uid://1kkc14003pak::::res://images/enemy_sprites/enemy_bird/ezgif.com-crop (17).png
+enemy_goblini.gd::GDScript::-1::1703071005::0::1::::<>CharacterBody2D<>::
+enemy_goblini.tscn::PackedScene::6885632102616310237::1703075034::0::1::::<><>::res://sprites/enemy_sprites/enemy_goblini.gd<>uid://0x1qvamaeqod::::res://images/enemy_sprites/gobline_idle.png<>uid://cduvucndpqa2d::::res://images/enemy_sprites/goblinr.png<>uid://b5i0sgl073cit::::res://images/enemy_sprites/attack.png<>uid://0a0tr6pqfgjb::::res://images/enemy_sprites/gobline_idle_hammer.png<>uid://8cpgkwj0wu70::::res://images/enemy_sprites/die.png<>uid://c6fm3vodph6o3::::res://images/enemy_sprites/hurt.png<>uid://bgmahbjk8yng0::::res://images/enemy_sprites/run.png<>uid://css1ibqjbisbw::::res://images/gui/enemy_health_bar_bg.png<>uid://bpo1wog1qwc8x::::res://images/gui/healthbar_progress.png<>res://sprites/enemy_sprites/goblinHealth.gd<>uid://db3tcbtqfvqh8::::res://images/gui/enemy_health_bar_trans.png<>res://sprites/enemy_sprites/DamageIndicator.gd
+goblinHealth.gd::GDScript::-1::1703071059::0::1::::<>TextureProgressBar<>::
+Health.gd::GDScript::-1::1703063040::0::1::::<>TextureProgressBar<>::
+Line2D.gd::GDScript::-1::1703059128::0::1::::<>Line2D<>::
+::res://sprites/hero_sprite/::1703075034
 CollisionShape2D.gd::GDScript::-1::1702657880::0::1::::<>CollisionShape2D<>::
 facing_collision.gd::GDScript::-1::1702658034::0::1::::<>CollisionShape2D<>::
-hero.gd::GDScript::-1::1702901024::0::1::::<>CharacterBody2D<>::
-hero.tscn::PackedScene::8945989939406117835::1702901463::0::1::::<><>::res://sprites/hero_sprite/hero.gd<>uid://c2lpfw2vjwwk3::::res://fire_magic.tscn<>uid://b7ypahj1sjdan::::res://movements/dead/sprites_145.png<>uid://b7yi8xd0p2uls::::res://movements/jump/sprites_116.png<>uid://bf3i60vlr2kxk::::res://movements/attack1/sprites_49.png<>uid://b62jp0rookqa5::::res://movements/attacks/Magic_arrow.png<>uid://brn8ss0hkdqf8::::res://movements/attack1/sprites_50.png<>uid://c7d7v2bgls4n6::::res://movements/jump/sprites_117.png<>uid://lkei8ujp0eev::::res://movements/dead/sprites_146.png<>res://sprites/hero_sprite/Fire.gd<>uid://de6fgyfcj7v0n::::res://movements/idle/iddle_01.png<>uid://bty61l1580jk8::::res://movements/attack1/sprites_51.png<>uid://bjhleru8t452e::::res://movements/dead/sprites_147.png<>uid://bmeswr4o3p3qn::::res://movements/idle/iddle_02.png<>uid://bk1su8hjfioxa::::res://movements/attack1/sprites_52.png<>uid://pguo3vm216i6::::res://movements/dead/sprites_148.png<>uid://dsly0lw12jsqf::::res://movements/idle/iddle_03.png<>uid://dxbtqhlbxkwv2::::res://movements/attack1/sprites_53.png<>uid://bm4atoahox14f::::res://movements/attack1/sprites_54.png<>uid://p82vxy6hfqbj::::res://movements/idle/iddle_04.png<>uid://dbbkmsttiaex2::::res://movements/attack1/sprites_55.png<>uid://bmgn2t0msjb4a::::res://movements/idle/iddle_07.png<>uid://dwn0p30o76kye::::res://movements/idle/iddle_08.png<>uid://1dj8idqb1ov4::::res://movements/idle_left/sprites_01 copy 2.png<>uid://bxo05hyrypvdq::::res://movements/idle_left/sprites_01 copy 3.png<>uid://dm28f3havikd4::::res://movements/idle_left/sprites_01 copy 4.png<>uid://bqh70ptbnl7qf::::res://movements/idle_left/sprites_01 copy 5.png<>uid://dmtx4j5qsl21q::::res://movements/idle_left/sprites_01 copy 6.png<>uid://5g4b7qijtat5::::res://movements/idle_left/sprites_01 copy 7.png<>uid://bsnaitk3iregr::::res://movements/idle_left/sprites_01 copy 8.png<>uid://co5ed3xpuycf0::::res://movements/idle_left/sprites_01 copy.png<>uid://de74rneiwtw18::::res://movements/jump/sprites_119.png<>uid://cjhjd5e3c0pes::::res://movements/jump/sprites_120.png<>uid://cyopkbhe4h616::::res://movements/jump/sprites_118.png<>uid://caxjmntead81x::::res://movements/jump/sprites_113.png<>uid://b4iiromxbh6x::::res://movements/jump/sprites_117-2.png<>uid://vr8xavhx34nn::::res://movements/run/spritte22_01.png<>uid://bubo8eoamq0j7::::res://movements/run/spritte22_02.png<>uid://beo1e2ea2e4v4::::res://movements/run/spritte22_03.png<>uid://boh6lctepy2su::::res://movements/run/spritte22_04.png<>uid://00063iutftr8::::res://movements/run/spritte22_05.png<>uid://b7blo0rg04axd::::res://movements/run/spritte22_06.png<>uid://bpou3c1ltp4yr::::res://movements/run/spritte22_07.png<>uid://byvgtah5u0tov::::res://movements/run/spritte22_08.png<>uid://d0km3m4pwkltx::::res://movements/attacks/Attack_2.png<>uid://d0v3fr7i3i07v::::res://movements/attacks/Magic_sphere.png<>uid://cxon6avt2momb::::res://movements/attacks/Charge_1.png
-FireMagic.gd::GDScript::-1::1702901377::0::1::::<>CharacterBody2D<>::
 Fire.gd::GDScript::-1::1702881121::0::1::::<>Area2D<>::
+FireMagic.gd::GDScript::-1::1702967575::0::1::::<>CharacterBody2D<>::
+hero.gd::GDScript::-1::1702985533::0::1::::<>CharacterBody2D<>::
+hero.tscn::PackedScene::8945989939406117835::1703075034::0::1::::<><>::res://sprites/hero_sprite/hero.gd<>uid://c2lpfw2vjwwk3::::res://fire_magic.tscn<>uid://b7ypahj1sjdan::::res://movements/dead/sprites_145.png<>uid://b7yi8xd0p2uls::::res://movements/jump/sprites_116.png<>uid://bf3i60vlr2kxk::::res://movements/attack1/sprites_49.png<>uid://b62jp0rookqa5::::res://movements/attacks/Magic_arrow.png<>uid://brn8ss0hkdqf8::::res://movements/attack1/sprites_50.png<>uid://c7d7v2bgls4n6::::res://movements/jump/sprites_117.png<>uid://lkei8ujp0eev::::res://movements/dead/sprites_146.png<>uid://de6fgyfcj7v0n::::res://movements/idle/iddle_01.png<>uid://bty61l1580jk8::::res://movements/attack1/sprites_51.png<>uid://bjhleru8t452e::::res://movements/dead/sprites_147.png<>uid://bmeswr4o3p3qn::::res://movements/idle/iddle_02.png<>uid://bk1su8hjfioxa::::res://movements/attack1/sprites_52.png<>uid://pguo3vm216i6::::res://movements/dead/sprites_148.png<>uid://dsly0lw12jsqf::::res://movements/idle/iddle_03.png<>uid://dxbtqhlbxkwv2::::res://movements/attack1/sprites_53.png<>uid://bm4atoahox14f::::res://movements/attack1/sprites_54.png<>uid://p82vxy6hfqbj::::res://movements/idle/iddle_04.png<>uid://dbbkmsttiaex2::::res://movements/attack1/sprites_55.png<>uid://bmgn2t0msjb4a::::res://movements/idle/iddle_07.png<>uid://dwn0p30o76kye::::res://movements/idle/iddle_08.png<>uid://1dj8idqb1ov4::::res://movements/idle_left/sprites_01 copy 2.png<>uid://bxo05hyrypvdq::::res://movements/idle_left/sprites_01 copy 3.png<>uid://dm28f3havikd4::::res://movements/idle_left/sprites_01 copy 4.png<>uid://bqh70ptbnl7qf::::res://movements/idle_left/sprites_01 copy 5.png<>uid://dmtx4j5qsl21q::::res://movements/idle_left/sprites_01 copy 6.png<>uid://5g4b7qijtat5::::res://movements/idle_left/sprites_01 copy 7.png<>uid://bsnaitk3iregr::::res://movements/idle_left/sprites_01 copy 8.png<>uid://co5ed3xpuycf0::::res://movements/idle_left/sprites_01 copy.png<>uid://de74rneiwtw18::::res://movements/jump/sprites_119.png<>uid://cjhjd5e3c0pes::::res://movements/jump/sprites_120.png<>uid://cyopkbhe4h616::::res://movements/jump/sprites_118.png<>uid://caxjmntead81x::::res://movements/jump/sprites_113.png<>uid://b4iiromxbh6x::::res://movements/jump/sprites_117-2.png<>uid://vr8xavhx34nn::::res://movements/run/spritte22_01.png<>uid://bubo8eoamq0j7::::res://movements/run/spritte22_02.png<>uid://beo1e2ea2e4v4::::res://movements/run/spritte22_03.png<>uid://boh6lctepy2su::::res://movements/run/spritte22_04.png<>uid://00063iutftr8::::res://movements/run/spritte22_05.png<>uid://b7blo0rg04axd::::res://movements/run/spritte22_06.png<>uid://bpou3c1ltp4yr::::res://movements/run/spritte22_07.png<>uid://byvgtah5u0tov::::res://movements/run/spritte22_08.png<>uid://d0km3m4pwkltx::::res://movements/attacks/Attack_2.png<>uid://d0v3fr7i3i07v::::res://movements/attacks/Magic_sphere.png<>uid://5l7qcrkntuem::::res://movements/attacks/Magic_sphere_jump.png<>uid://bjqg6xwi0xxr7::::res://hit_effect.tscn
 ::res://sprites/npc_sprites/::1702894568
 almost Dead.png::CompressedTexture2D::7210621332448924476::1701866522::1701962679::1::::<><>::
-injured_knight.tscn::PackedScene::4166280079271163907::1702894567::0::1::::<><>::res://sprites/npc_sprties/injured_knight.gd<>uid://day446ebhv06c::::res://sprites/npc_sprites/almost Dead.png
+injured_knight.tscn::PackedScene::4166280079271163907::1702894567::0::1::::<><>::res://sprites/npc_sprties/injured_knight.gd<>uid://day446ebhv06c
 ::res://sprites/npc_sprties/::1701959805
 injured_knight.gd::GDScript::-1::1701880803::0::1::::<>CharacterBody2D<>::
 ::res://sprites/object_sprites/::1702883908
 cloud.gd::GDScript::-1::1701880838::0::1::::<>CharacterBody2D<>::
 cloud.tscn::PackedScene::9127508126216517834::1701959968::0::1::::<><>::res://sprites/object_sprites/cloud.gd<>uid://cs46w8owxnda3
-fire.tscn::PackedScene::8221892030713724522::1702883908::0::1::::<><>::uid://c7u0p506cbs51::::res://movements/attacks/magic_fire.png
+fire.tscn::PackedScene::8221892030713724522::1702883908::0::1::::<><>::uid://c7u0p506cbs51

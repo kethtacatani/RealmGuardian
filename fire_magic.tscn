@@ -142,7 +142,7 @@ debug_color = Color(0.898039, 0.2, 0.607843, 0.419608)
 one_shot = true
 
 [node name="FireOut" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.3
 
 [connection signal="animation_finished" from="CollisionShape2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

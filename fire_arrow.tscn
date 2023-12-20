@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://csuvbjrwt8r5m"]
+
+[ext_resource type="Script" path="res://fire_arrow.gd" id="1_i701s"]
+[ext_resource type="Texture2D" uid="uid://dg0hbwa8awfkh" path="res://movements/attacks/Charge_2.png" id="2_0tfdh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wjxp"]
+atlas = ExtResource("2_0tfdh")
+region = Rect2(128, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e43ry"]
+atlas = ExtResource("2_0tfdh")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0qp0"]
+atlas = ExtResource("2_0tfdh")
+region = Rect2(256, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6vuu"]
+atlas = ExtResource("2_0tfdh")
+region = Rect2(320, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t87k"]
+atlas = ExtResource("2_0tfdh")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k1nuw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wjxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e43ry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0qp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6vuu")
+}],
+"loop": true,
+"name": &"fire_arrow",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3t87k")
+}],
+"loop": false,
+"name": &"fire_hit",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u545g"]
+radius = 1.34703
+height = 17.5114
+
+[node name="FireArrow" type="CharacterBody2D"]
+script = ExtResource("1_i701s")
+
+[node name="range1" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="range1"]
+position = Vector2(-13, -1)
+scale = Vector2(1.19699, 1.19699)
+sprite_frames = SubResource("SpriteFrames_k1nuw")
+animation = &"fire_hit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range1"]
+position = Vector2(-6, -1.5)
+rotation = 1.5708
+scale = Vector2(1.48475, 1.48475)
+shape = SubResource("CapsuleShape2D_u545g")
+debug_color = Color(0.94902, 0.0941176, 0.521569, 0.419608)
+
+[node name="FireOut" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+
+[node name="FireDelay" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="animation_finished" from="range1/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="FireOut" to="." method="_on_fire_out_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="FireDelay" to="." method="_on_fire_delay_timeout"]

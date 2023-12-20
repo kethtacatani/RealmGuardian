@@ -1,15 +1,15 @@
-[gd_scene load_steps=110 format=3 uid="uid://d0prfais6v0l0"]
+[gd_scene load_steps=99 format=3 uid="uid://d0prfais6v0l0"]
 
 [ext_resource type="Script" path="res://sprites/hero_sprite/hero.gd" id="1_gu7lq"]
 [ext_resource type="PackedScene" uid="uid://c2lpfw2vjwwk3" path="res://fire_magic.tscn" id="2_3kfa1"]
 [ext_resource type="Texture2D" uid="uid://b7ypahj1sjdan" path="res://movements/dead/sprites_145.png" id="2_528bg"]
 [ext_resource type="Texture2D" uid="uid://b7yi8xd0p2uls" path="res://movements/jump/sprites_116.png" id="2_elw7m"]
+[ext_resource type="PackedScene" uid="uid://csuvbjrwt8r5m" path="res://fire_arrow.tscn" id="2_rxptq"]
 [ext_resource type="Texture2D" uid="uid://bf3i60vlr2kxk" path="res://movements/attack1/sprites_49.png" id="2_u4vsy"]
 [ext_resource type="Texture2D" uid="uid://b62jp0rookqa5" path="res://movements/attacks/Magic_arrow.png" id="2_w361j"]
 [ext_resource type="Texture2D" uid="uid://brn8ss0hkdqf8" path="res://movements/attack1/sprites_50.png" id="3_35qy5"]
 [ext_resource type="Texture2D" uid="uid://c7d7v2bgls4n6" path="res://movements/jump/sprites_117.png" id="3_68oxu"]
 [ext_resource type="Texture2D" uid="uid://lkei8ujp0eev" path="res://movements/dead/sprites_146.png" id="3_ttu7i"]
-[ext_resource type="Script" path="res://sprites/hero_sprite/Fire.gd" id="4_4rna0"]
 [ext_resource type="Texture2D" uid="uid://de6fgyfcj7v0n" path="res://movements/idle/iddle_01.png" id="4_lilgd"]
 [ext_resource type="Texture2D" uid="uid://bty61l1580jk8" path="res://movements/attack1/sprites_51.png" id="4_rnfor"]
 [ext_resource type="Texture2D" uid="uid://bjhleru8t452e" path="res://movements/dead/sprites_147.png" id="4_wq7oh"]
@@ -47,82 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://d0km3m4pwkltx" path="res://movements/attacks/Attack_2.png" id="35_5ayyg"]
 [ext_resource type="Texture2D" uid="uid://d0v3fr7i3i07v" path="res://movements/attacks/Magic_sphere.png" id="35_e77bd"]
 [ext_resource type="Texture2D" uid="uid://5l7qcrkntuem" path="res://movements/attacks/Magic_sphere_jump.png" id="39_v4qtd"]
-[ext_resource type="Texture2D" uid="uid://cxon6avt2momb" path="res://movements/attacks/Charge_1.png" id="45_wt750"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qywj8"]
-atlas = ExtResource("45_wt750")
-region = Rect2(0, 0, 64, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6rh0e"]
-atlas = ExtResource("45_wt750")
-region = Rect2(64, 0, 64, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yn5yp"]
-atlas = ExtResource("45_wt750")
-region = Rect2(128, 0, 64, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dgwl6"]
-atlas = ExtResource("45_wt750")
-region = Rect2(192, 0, 64, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4c2k0"]
-atlas = ExtResource("45_wt750")
-region = Rect2(256, 0, 64, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7rpug"]
-atlas = ExtResource("45_wt750")
-region = Rect2(320, 0, 64, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wmqh4"]
-atlas = ExtResource("45_wt750")
-region = Rect2(384, 0, 64, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e1igy"]
-atlas = ExtResource("45_wt750")
-region = Rect2(448, 0, 64, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pbdkx"]
-atlas = ExtResource("45_wt750")
-region = Rect2(512, 0, 64, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_587lq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qywj8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6rh0e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yn5yp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dgwl6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4c2k0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7rpug")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wmqh4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e1igy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pbdkx")
-}],
-"loop": true,
-"name": &"fire2",
-"speed": 15.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4g6bn"]
-radius = 4.0
-height = 18.0
+[ext_resource type="PackedScene" uid="uid://bjqg6xwi0xxr7" path="res://hit_effect.tscn" id="49_bybd3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j8h5c"]
 radius = 7.68651
@@ -320,29 +245,6 @@ region = Rect2(1024, 0, 128, 128)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q1d0t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ujvvx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uy8ew")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ymtn5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4a1w8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qlwo5")
-}],
-"loop": false,
-"name": &"attack2",
-"speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("2_u4vsy")
 }, {
 "duration": 1.0,
@@ -489,6 +391,29 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump_up_loop",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1d0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujvvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy8ew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymtn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a1w8")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_qlwo5")
+}],
+"loop": false,
+"name": &"range1",
 "speed": 20.0
 }, {
 "frames": [{
@@ -666,26 +591,11 @@ animations = [{
 [node name="FireMagic" parent="." instance=ExtResource("2_3kfa1")]
 position = Vector2(0, 7)
 
+[node name="FireArrow" parent="." instance=ExtResource("2_rxptq")]
+
 [node name="hero" type="CharacterBody2D" parent="."]
 position = Vector2(0, -1)
 script = ExtResource("1_gu7lq")
-
-[node name="Fire" type="Area2D" parent="hero"]
-visible = false
-position = Vector2(49, 20)
-rotation = 1.5708
-script = ExtResource("4_4rna0")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="hero/Fire"]
-position = Vector2(1, 7)
-rotation = -1.5708
-scale = Vector2(0.688818, 0.688818)
-sprite_frames = SubResource("SpriteFrames_587lq")
-animation = &"fire2"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hero/Fire"]
-position = Vector2(1, 1)
-shape = SubResource("CapsuleShape2D_4g6bn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hero"]
 position = Vector2(0.999998, 30)
@@ -696,7 +606,9 @@ shape = SubResource("CapsuleShape2D_j8h5c")
 position = Vector2(1.02487, -16.3979)
 scale = Vector2(0.494629, 0.494629)
 sprite_frames = SubResource("SpriteFrames_c1ogu")
-animation = &"range2_jump"
+animation = &"range1"
+frame = 5
+frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="hero/CollisionShape2D/AnimatedSprite2D"]
 position = Vector2(56.9766, 37.2959)
@@ -721,6 +633,9 @@ position = Vector2(34, 4)
 scale = Vector2(0.91231, 0.91231)
 shape = SubResource("CircleShape2D_pxn0u")
 debug_color = Color(0.631373, 0.529412, 0, 0.419608)
+
+[node name="HitEffect" parent="hero" instance=ExtResource("49_bybd3")]
+position = Vector2(3, 1)
 
 [connection signal="animation_finished" from="hero/CollisionShape2D/AnimatedSprite2D" to="hero" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="hero/melee_attack1" to="hero" method="_on_melee_attack_1_area_entered"]

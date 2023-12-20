@@ -448,6 +448,8 @@ debug_color = Color(0.105882, 0, 0.701961, 0.419608)
 script = ExtResource("12_5iwae")
 
 [node name="TeritoryLeft" type="Area2D" parent="."]
+position = Vector2(35, 0)
+scale = Vector2(1.60379, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeritoryLeft"]
 position = Vector2(-299, 2)
@@ -462,6 +464,7 @@ shape = SubResource("RectangleShape2D_3bpqk")
 debug_color = Color(0.788235, 0.14902, 0.968627, 0.231373)
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
 one_shot = true
 
 [node name="Health" type="TextureProgressBar" parent="."]
@@ -478,6 +481,11 @@ texture_progress = ExtResource("9_f8rd7")
 tint_progress = Color(0.780392, 0, 0, 1)
 script = ExtResource("10_0p6ft")
 
+[node name="TimerHeal" type="Timer" parent="."]
+
+[node name="TimerDead" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
@@ -490,3 +498,5 @@ script = ExtResource("10_0p6ft")
 [connection signal="body_entered" from="TeritoryLeft" to="." method="_on_teritory_left_body_entered"]
 [connection signal="body_entered" from="TeritoryRight" to="." method="_on_teritory_right_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TimerHeal" to="." method="_on_timer_heal_timeout"]
+[connection signal="timeout" from="TimerDead" to="." method="_on_timer_dead_timeout"]

@@ -24,7 +24,7 @@ func _ready():
 	
 	
 func _physics_process(delta):
-	if Input.is_action_just_pressed("fire_magic") and global.health!=0:
+	if Input.is_action_just_pressed("fire_magic") and global.player_health!=0 and not global.attacking:
 		$FireDelay.start()
 	velocity.x = direction * speed
 	

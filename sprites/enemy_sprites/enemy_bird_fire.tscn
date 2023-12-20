@@ -1,0 +1,111 @@
+[gd_scene load_steps=15 format=3 uid="uid://bi3awj6h0uvds"]
+
+[ext_resource type="Script" path="res://sprites/enemy_sprites/enemy_bird_fire.gd" id="1_74ta6"]
+[ext_resource type="Texture2D" uid="uid://bhk2p6sr7ehhj" path="res://images/enemy_sprites/enemy_bird/fireball.png" id="2_6nxim"]
+[ext_resource type="Texture2D" uid="uid://be4irawxjmky" path="res://images/enemy_sprites/enemy_bird/fire.png" id="2_o50wq"]
+[ext_resource type="Texture2D" uid="uid://1kkc14003pak" path="res://images/enemy_sprites/enemy_bird/ezgif.com-crop (17).png" id="3_mj5bo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nfjiy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dt1g"]
+atlas = ExtResource("2_6nxim")
+region = Rect2(87, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqclh"]
+atlas = ExtResource("2_6nxim")
+region = Rect2(0, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41nue"]
+atlas = ExtResource("2_6nxim")
+region = Rect2(0, 87, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wifq"]
+atlas = ExtResource("2_o50wq")
+region = Rect2(0, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tiw24"]
+atlas = ExtResource("2_o50wq")
+region = Rect2(87, 0, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug6ia"]
+atlas = ExtResource("2_o50wq")
+region = Rect2(0, 87, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hxf8"]
+atlas = ExtResource("3_mj5bo")
+region = Rect2(0, 174, 87, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8thq"]
+atlas = ExtResource("3_mj5bo")
+region = Rect2(87, 174, 87, 87)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2prf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dt1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqclh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41nue")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wifq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tiw24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug6ia")
+}],
+"loop": true,
+"name": &"fire1",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hxf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8thq")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 14.0
+}]
+
+[node name="bird_fire" type="CharacterBody2D"]
+rotation = 0.0105111
+scale = Vector2(0.391286, 0.391286)
+script = ExtResource("1_74ta6")
+
+[node name="bird_fire" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bird_fire"]
+position = Vector2(0.2149, 20.4443)
+scale = Vector2(2.7695, 2.7695)
+shape = SubResource("CircleShape2D_nfjiy")
+debug_color = Color(0.94902, 0, 0.572549, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bird_fire"]
+position = Vector2(-3.19784, 24.5571)
+rotation = -3.12144
+scale = Vector2(1.91081, 1.67465)
+skew = 0.00449955
+sprite_frames = SubResource("SpriteFrames_d2prf")
+animation = &"fire"
+frame_progress = 0.871508
+
+[node name="Hit" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="body_entered" from="bird_fire" to="." method="_on_bird_fire_body_entered"]
+[connection signal="timeout" from="Hit" to="." method="_on_hit_timeout"]

@@ -9,7 +9,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if parent.teritory_entered and global.health!=0 or value_changed:
+	if parent.teritory_entered and not parent.dead:
 		visible=true
 	else:
 		visible=false

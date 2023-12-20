@@ -24,7 +24,6 @@ var melee_area
 
 @onready var anim= get_node("CollisionShape2D/AnimatedSprite2D")
 
-
 func _ready():	
 	anim.play('idle')
 	global.player_direction=direction
@@ -68,20 +67,22 @@ func _physics_process(delta):
 	else:
 			pass
 			
-
+	
 	# Handle Jump.
 	
 	if Input.is_action_just_pressed("ui_accept") and not dead:
 		#double jump
-		if is_on_floor() :
+		if is_on_floor() and not global.attacking:
 			jump()
-		elif not has_double_jump:
+		elif not has_double_jump and not is_on_floor():
 			double_jump()
 	#handle melee_attack1
 	if Input.is_action_just_pressed("melee_attack1") and not dead:
 		attack_melee1()
 	if Input.is_action_just_pressed("fire_magic") and not dead:
 		attack_range2()
+	if Input.is_action_just_pressed("fire_arrow") and not dead:
+		attack_range1()
 			
 	direction = Input.get_axis("ui_left", "ui_right")
 	
@@ -103,7 +104,7 @@ func _physics_process(delta):
 	
 #attacks
 func attack_melee1():
-	if not animation_locked:
+	if not global.attacking:
 		add_child(melee_area)
 		anim.play("attack_melee1")
 		animation_locked=true
@@ -129,12 +130,27 @@ func attack_range2():
 			if  is_on_floor():
 				stop_move()
 
+func attack_range1():
+		if not global.attacking:
+			anim.play("range1")
+#			if is_on_floor():
+#				anim.play("range1")
+#			else:
+#				anim.play("range1_jump")
+			animation_locked=true
+			attack_facing_lock=true
+			global.attacking=true
+		#	gravity=30
+		#	velocity.x = direction * SPEED*0.2
+		#	velocity.y = direction * SPEED*0.2
+			if  is_on_floor():
+				stop_move()
 		
 
 		
 
 func if_dead():
-	if global.health==0:
+	if global.player_health==0:
 		if not animation_locked and is_on_floor():
 			anim.play("dead")	
 			animation_locked=true
@@ -163,7 +179,7 @@ func update_animation():
 	#			velocity.x = move_toward(velocity.x, 0, SPEED)	
 		
 func update_facing_sprite():
-	if direction and global.health!=0 and not attack_facing_lock:
+	if direction and global.player_health!=0 and not attack_facing_lock:
 		if direction < 0: # Check if moving left
 			global.player_direction=-1
 			if facing_right:
@@ -232,6 +248,11 @@ func _on_animated_sprite_2d_animation_finished():
 		animation_locked=false
 		attack_facing_lock=false
 		global.attacking=false
+	if(anim.animation=="range1"):
+		gravity=default_gravity
+		animation_locked=false
+		attack_facing_lock=false
+		global.attacking=false
 		
 
 
@@ -244,3 +265,6 @@ func _on_animated_sprite_2d_animation_finished():
 
 func _on_melee_attack_1_area_entered(area):
 	pass # Replace with function body.
+
+
+	

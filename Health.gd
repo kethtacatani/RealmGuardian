@@ -8,5 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	text = str(int(global.health)) + "/" + str(global.max_health)
+	text = str(int(global.player_health)) + "/" + str(int(global.player_max_health))
 
