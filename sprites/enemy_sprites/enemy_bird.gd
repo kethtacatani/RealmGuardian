@@ -440,7 +440,7 @@ func _on_teritory_left_body_exited(body):
 	if body.name=="hero":
 		teritory_entered_left=false
 func player_nearby():
-	if global.player_pos > initialPosition-position_limit*6 and global.player_pos < initialPosition+position_limit*6:
+	if global.player_pos > initialPosition-position_limit*7 and global.player_pos < initialPosition+position_limit*7:
 		return true
 	else:
 		return false

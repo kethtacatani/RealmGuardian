@@ -276,7 +276,7 @@ func check_teritory():
 #		teritory_entered_right=false
 		
 func player_nearby():
-	if global.player_pos > initialPosition-position_limit*6 and global.player_pos < initialPosition+position_limit*6:
+	if global.player_pos > initialPosition-position_limit*7 and global.player_pos < initialPosition+position_limit*7:
 		return true
 	else:
 		return false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://x1u4l6nmc63c"]
+[gd_scene load_steps=25 format=3 uid="uid://x1u4l6nmc63c"]
 
 [ext_resource type="Texture2D" uid="uid://bbf2k0mp0tsc3" path="res://images/background/orig  long.png" id="1_3styl"]
 [ext_resource type="PackedScene" uid="uid://d0prfais6v0l0" path="res://sprites/hero_sprite/hero.tscn" id="1_o6tn1"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d3boywo6mhwmc" path="res://sprites/object_sprites/cloud.tscn" id="4_ue5xg"]
 [ext_resource type="PackedScene" uid="uid://c5dpmccf804dl" path="res://sprites/enemy_sprites/enemy_goblini.tscn" id="5_08rp5"]
 [ext_resource type="PackedScene" uid="uid://cep2krsq22ntt" path="res://sprites/enemy_sprites/enemy_bird.tscn" id="6_vfccq"]
+[ext_resource type="PackedScene" uid="uid://dlfsep6h1p3iu" path="res://gui/texture_button.tscn" id="7_00krn"]
 [ext_resource type="Texture2D" uid="uid://c2xdansa7f3y0" path="res://images/gui/healthbar.png" id="8_1glrx"]
 [ext_resource type="Texture2D" uid="uid://bpo1wog1qwc8x" path="res://images/gui/healthbar_progress.png" id="9_ufl0k"]
 [ext_resource type="Script" path="res://HealthBar.gd" id="10_2s6ys"]
@@ -17,6 +18,10 @@
 [ext_resource type="Script" path="res://level_label.gd" id="12_4jmvg"]
 [ext_resource type="Script" path="res://LevelExp.gd" id="12_tp16k"]
 [ext_resource type="Script" path="res://Health.gd" id="13_vp2iw"]
+[ext_resource type="Texture2D" uid="uid://c71rki1cm3bo4" path="res://images/gui/skill_gui.png" id="18_xerhh"]
+[ext_resource type="PackedScene" uid="uid://dg6nqs1ihxg32" path="res://gui/range2_button.tscn" id="19_kyobt"]
+[ext_resource type="PackedScene" uid="uid://c43pf2i61vbxt" path="res://gui/range1_button.tscn" id="20_l8eah"]
+[ext_resource type="Texture2D" uid="uid://3jacesxdxik5" path="res://images/gui/skill_gui_trans.png" id="22_gxjwv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7canv"]
 size = Vector2(18911.8, 129)
@@ -56,7 +61,7 @@ position = Vector2(3376, 414)
 scale = Vector2(1.43364, 1.43364)
 
 [node name="enemy_goblin2" parent="StaticBody2D" instance=ExtResource("5_08rp5")]
-position = Vector2(503, 385)
+position = Vector2(504, 408)
 scale = Vector2(1.43364, 1.43364)
 
 [node name="enemy_bird2" parent="StaticBody2D" instance=ExtResource("6_vfccq")]
@@ -189,3 +194,52 @@ offset_right = 444.0
 offset_bottom = 150.0
 scale = Vector2(0.368221, 0.368221)
 texture = ExtResource("10_puwuy")
+
+[node name="Skills" type="Control" parent="GUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 551.0
+offset_top = 565.0
+offset_right = 591.0
+offset_bottom = 605.0
+scale = Vector2(0.6, 0.6)
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Skills"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 436.0
+offset_right = 1256.0
+offset_bottom = 921.0
+texture = ExtResource("18_xerhh")
+
+[node name="TextureButton" parent="GUI/Skills" instance=ExtResource("7_00krn")]
+layout_mode = 0
+offset_left = 273.683
+offset_top = 577.945
+offset_right = 305.683
+offset_bottom = 609.945
+scale = Vector2(5.44775, 5.79429)
+
+[node name="TextureButton3" parent="GUI/Skills" instance=ExtResource("20_l8eah")]
+layout_mode = 0
+offset_left = 466.683
+offset_top = 579.945
+offset_right = 498.683
+offset_bottom = 611.945
+scale = Vector2(5.448, 5.795)
+
+[node name="TextureButton2" parent="GUI/Skills" instance=ExtResource("19_kyobt")]
+layout_mode = 0
+offset_left = 660.683
+offset_top = 578.945
+offset_right = 692.683
+offset_bottom = 610.945
+scale = Vector2(5.448, 5.795)
+
+[node name="TextureRect2" type="TextureRect" parent="GUI/Skills"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 436.0
+offset_right = 1256.0
+offset_bottom = 921.0
+texture = ExtResource("22_gxjwv")

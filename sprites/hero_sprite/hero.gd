@@ -15,7 +15,7 @@ var facing_right=true
 var new_game=false
 var health_bar
 var dead= false
-var default_gravity=ProjectSettings.get_setting("physics/2d/default_gravity")
+var default_gravity=1200
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -77,12 +77,24 @@ func _physics_process(delta):
 		elif not has_double_jump and not is_on_floor():
 			double_jump()
 	#handle melee_attack1
-	if Input.is_action_just_pressed("melee_attack1") and not dead:
+	if Input.is_action_just_pressed("melee_attack1") and not dead and global.can_melee1:
+		$MeleeTimer.wait_time=global.melee1_cooldown
+		global.can_melee1=false
+		$MeleeTimer.start()
 		attack_melee1()
-	if Input.is_action_just_pressed("fire_magic") and not dead:
-		attack_range2()
-	if Input.is_action_just_pressed("fire_arrow") and not dead:
+	if Input.is_action_just_pressed("fire_arrow") and not dead and global.can_range1:
+		$Range1Timer.wait_time=global.range1_cooldown
+		global.can_range1=false
+		$Range1Timer.start()
 		attack_range1()
+		
+	if Input.is_action_just_pressed("fire_magic") and not dead and global.can_range2:
+		$Range2Timer.wait_time=global.range2_cooldown
+		global.can_range2=false
+		$Range2Timer.start()
+		attack_range2()
+		print("can")
+	
 			
 	direction = Input.get_axis("ui_left", "ui_right")
 	
@@ -133,8 +145,8 @@ func attack_range2():
 func attack_range1():
 		if not global.attacking:
 			anim.play("range1")
-#			if is_on_floor():
-#				anim.play("range1")
+#			if not is_on_floor():
+#				velocity.y=-100
 #			else:
 #				anim.play("range1_jump")
 			animation_locked=true
@@ -268,3 +280,15 @@ func _on_melee_attack_1_area_entered(area):
 
 
 	
+
+
+func _on_melee_timer_timeout():
+	global.can_melee1=true
+
+
+func _on_range_1_timer_timeout():
+	global.can_range1=true
+
+
+func _on_range_2_timer_timeout():
+	global.can_range2=true

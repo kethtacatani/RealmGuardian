@@ -637,5 +637,21 @@ debug_color = Color(0.631373, 0.529412, 0, 0.419608)
 [node name="HitEffect" parent="hero" instance=ExtResource("49_bybd3")]
 position = Vector2(3, 1)
 
+[node name="MeleeTimer" type="Timer" parent="hero"]
+one_shot = true
+
+[node name="Range1Timer" type="Timer" parent="hero"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Range2Timer" type="Timer" parent="hero"]
+wait_time = 10.0
+autostart = true
+
+[node name="Timer" type="Timer" parent="hero"]
+
 [connection signal="animation_finished" from="hero/CollisionShape2D/AnimatedSprite2D" to="hero" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="hero/melee_attack1" to="hero" method="_on_melee_attack_1_area_entered"]
+[connection signal="timeout" from="hero/MeleeTimer" to="hero" method="_on_melee_timer_timeout"]
+[connection signal="timeout" from="hero/Range1Timer" to="hero" method="_on_range_1_timer_timeout"]
+[connection signal="timeout" from="hero/Range2Timer" to="hero" method="_on_range_2_timer_timeout"]

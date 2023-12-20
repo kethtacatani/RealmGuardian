@@ -4,6 +4,13 @@ var player_default_regen=100.0
 var player_regen_perk=1.0
 var player_regen= player_default_regen*player_regen_perk
 
+var can_melee1=true
+var can_range1=true
+var can_range2=true
+var melee1_cooldown=1
+var range1_cooldown=3
+var range2_cooldown=10
+
 var knight_dead=true
 var is_in_dialogue=false
 var player_pos=0.0

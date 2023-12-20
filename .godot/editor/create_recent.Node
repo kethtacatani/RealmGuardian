@@ -1,4 +1,9 @@
+TextureRect
 Timer
+Control
+Label
+TextureProgressBar
+TextureButton
 CollisionShape2D
 Area2D
 AnimatedSprite2D
@@ -6,14 +11,10 @@ CharacterBody2D
 Line2D
 Node
 Node2D
-TextureProgressBar
 Sprite2D
 RigidBody2D
 Marker2D
 AnimationPlayer
-Label
-TextureRect
-Control
 CanvasLayer
 Camera2D
 StaticBody2D

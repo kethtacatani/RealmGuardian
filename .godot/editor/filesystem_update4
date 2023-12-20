@@ -15,3 +15,10 @@ res://fire_arrow.tscn
 res://fire_arrow.gd
 res://sprites/hero_sprite/hero.gd
 res://global.gd
+res://TextureButton.gd
+res://gui/texture_button.tscn
+res://sprites/hero_sprite/FireMagic.gd
+res://gui/range1_button.tscn
+res://gui/range2_button.tscn
+res://gui/range2_button.gd
+res://gui/range1_button.gd
