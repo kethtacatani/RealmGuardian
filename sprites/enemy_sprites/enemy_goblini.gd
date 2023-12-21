@@ -14,12 +14,14 @@ var melee_attack1=false
 var range1_attack=false
 var range2_attack=false
 var initialPosition;
+var initialPosition_y;
 var randomValue = global.getRandomValue(0,1)
 var direction = 1 if randomValue>0 else -1
 var next_idle=global.getRandomValue(2,7)
 var last_idle=0
 var facing_right=false
 var position_limit=200
+var position_limit_y=200
 var teritory_limit=600
 var anim_speed=0
 var damage= global.enemy_goblin_damage
@@ -42,6 +44,7 @@ func _ready():
 	anim.play('runn')
 #	anim.speed_scale(getRandomValue(0.8,1.2))
 	initialPosition = global_position.x;
+	initialPosition_y = global_position.y;
 	anim_speed= $AnimatedSprite2D
 	timer_heal=$TimerHeal
 	
@@ -79,7 +82,7 @@ func _physics_process(delta):
 	
 	var movement = speed * delta * direction
 	position.x += movement
-	if not global.goblin_hurt:
+	if not global.enemy_hurt:
 		if position.x <= initialPosition-position_limit:
 			direction = 1
 		elif  position.x > initialPosition+position_limit:
@@ -93,7 +96,7 @@ func _physics_process(delta):
 				facing_right=true
 	
 
-	if not global.goblin_hurt and not healing:
+	if not global.enemy_hurt and not healing:
 		timer_heal.start()
 		healing=true
 	
@@ -104,15 +107,13 @@ func _physics_process(delta):
 	move_and_slide()
 	check_teritory()
 
-	if not animation_locked:
+	if not animation_locked and not dead:
 		if (entered_left or entered_right) and global.player_health>0:
 			if entered_left and facing_right:
-				print("left")
 				direction=-1
 			elif entered_right and not facing_right:
 				direction=1
-				print("right")
-			global.goblin_hurt=true
+			global.enemy_hurt=true
 			anim.play("attack")
 			anim_speed.speed_scale= randf_range(0.8,1.5)
 		
@@ -126,7 +127,7 @@ func _physics_process(delta):
 				
 func random_idle():
 	var current_seconds = Time.get_ticks_msec() / 1000.0
-	if current_seconds-last_idle > next_idle and not global.goblin_hurt :
+	if current_seconds-last_idle > next_idle and not global.enemy_hurt :
 		anim.play("idle")
 		speed=0
 		animation_locked=true
@@ -150,7 +151,7 @@ func random_idle():
 
 func decrease_health():
 	if player_nearby():
-		global.goblin_hurt=true
+		global.enemy_hurt=true
 	var damage=0
 	if melee_attack1 or range1_attack or range2_attack:
 		if melee_attack1:
@@ -190,7 +191,9 @@ func _on_animated_sprite_2d_animation_finished():
 	if(anim.animation=="attack"):
 		animation_locked=false
 		if entered_left or entered_right:
+#			print("damage ", damage)
 			global.player_hurt(damage)
+#			print(global.ponts)
 	if(anim.animation=="hurt"):
 		animation_locked=false
 		
@@ -198,7 +201,6 @@ func _on_animated_sprite_2d_animation_finished():
 	if(anim.animation=="dead"):
 		dead=true		
 		global.player_add_exp(exp)
-		velocity.y=50
 		$TimerDead.start()
 		
 	if(anim.animation=="idle"):
@@ -262,7 +264,7 @@ func _on_teritory_right_body_entered(body):
 func check_teritory():
 	if global.player_pos > initialPosition-position_limit*4.5 and global.player_pos < initialPosition+position_limit*4.5:
 		teritory_entered=true
-		if global.goblin_hurt and player_nearby(): 		
+		if global.enemy_hurt and player_nearby(): 		
 			if teritory_entered_left:
 				direction= -1
 			elif teritory_entered_right:
@@ -271,21 +273,22 @@ func check_teritory():
 	else:
 		teritory_entered=false
 		if player_nearby():
-			global.goblin_hurt=false
+			global.enemy_hurt=false
 #		teritory_entered_left=false
 #		teritory_entered_right=false
 		
 func player_nearby():
 	if global.player_pos > initialPosition-position_limit*7 and global.player_pos < initialPosition+position_limit*7:
-		return true
-	else:
-		return false
+			if global.player_pos_y > initialPosition_y-position_limit_y and global.player_pos_y < initialPosition_y+position_limit_y:
+				return true
+			else:
+				return false
 		
 func _on_timer_timeout():
 	decrease_health()
 	
 func _on_timer_heal_timeout():
-	if not global.goblin_hurt:
+	if not global.enemy_hurt:
 		if health<max_health:
 			health+=2*randomScale
 		elif health>=max_health:

@@ -14,12 +14,14 @@ var melee_attack1=false
 var range1_attack=false
 var range2_attack=false
 var initialPosition;
+var initialPosition_y;
 var randomValue = global.getRandomValue(0,1)
 var direction = 1 if randomValue>0 else -1
 var next_idle=global.getRandomValue(2,7)
 var last_idle=0
 var facing_right=false
 var position_limit=200
+var position_limit_y=200
 var anim_speed=0
 var damage= global.enemy_bird_damage
 var randomScale= global.round_place(randf_range(1.5,1.8),1)
@@ -45,6 +47,7 @@ func _ready():
 	fire_out_timer = $FireOut
 	anim.play('fly')
 	initialPosition = global_position.x;
+	initialPosition_y = global_position.y;
 	anim_speed= $AnimatedSprite2D
 	timer_heal=$TimerHeal
 	bird_fire=$bird_fire
@@ -56,6 +59,7 @@ func _ready():
 	health*=randomScale
 	damage *= randomScale
 	exp *= randomScale
+	print(global_position)
 
 
 func _physics_process(delta):
@@ -67,7 +71,7 @@ func _physics_process(delta):
 	var movement = speed * delta * direction
 	position.x += movement
 	
-	if not global.bird_hurt:
+	if not global.enemy_hurt:
 		if position.x <= initialPosition-position_limit:
 			direction = 1
 		elif  position.x > initialPosition+position_limit:
@@ -88,7 +92,7 @@ func _physics_process(delta):
 			bird_fire.direction= 1
 			bird_fire.anim.flip_h=true
 			
-	if not global.bird_hurt and not healing:
+	if not global.enemy_hurt and not healing:
 		timer_heal.start()
 		healing=true
 		
@@ -100,7 +104,7 @@ func _physics_process(delta):
 			elif entered_right and not facing_right:
 				direction=1
 				anim.flip_h=false
-			global.bird_hurt=true
+			global.enemy_hurt=true
 			anim.play("attack")
 			speed=0
 			fire_direction(fire_x,fire_y)
@@ -129,7 +133,7 @@ func if_dead():
 		$DeadGone.start()
 
 func decrease_health():
-	global.bird_hurt=true
+	global.enemy_hurt=true
 	var damage=0
 	if melee_attack1 or range1_attack or range2_attack:
 		
@@ -152,7 +156,7 @@ func decrease_health():
 			
 func random_idle():
 	var current_seconds = Time.get_ticks_msec() / 1000.0
-	if current_seconds-last_idle > next_idle and not global.bird_hurt and not teritory_entered:
+	if current_seconds-last_idle > next_idle and not global.enemy_hurt and not teritory_entered:
 		anim.play("idle")
 		speed=0
 		animation_locked=true
@@ -217,17 +221,15 @@ func check_teritory():
 	if global.player_pos > initialPosition-position_limit*4.5 and global.player_pos < initialPosition+position_limit*4.5:
 		teritory_entered=true
 		
-		if global.bird_hurt:		
+		if global.enemy_hurt:		
 			if teritory_entered_left:
-				print("left", randomScale)
 				direction= -1
 			elif teritory_entered_right:
-				print("rigt",randomScale)
 				direction=1
 				
 	else:
 		teritory_entered=false
-		global.bird_hurt=false
+		global.enemy_hurt=false
 		
 
 func _on_fire_timer_timeout():
@@ -393,7 +395,7 @@ func _on_hit_mark_area_entered(area):
 
 
 func _on_timer_heal_timeout():
-	if not global.bird_hurt and health!=max_health:
+	if not global.enemy_hurt and health!=max_health:
 		if health<max_health:
 			health+=2*randomScale
 			print(health)
@@ -441,6 +443,7 @@ func _on_teritory_left_body_exited(body):
 		teritory_entered_left=false
 func player_nearby():
 	if global.player_pos > initialPosition-position_limit*7 and global.player_pos < initialPosition+position_limit*7:
-		return true
-	else:
-		return false
+			if global.player_pos_y > initialPosition_y-position_limit_y and global.player_pos_y < initialPosition_y+position_limit_y:
+				return true
+			else:
+				return false

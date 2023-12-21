@@ -1,6 +1,9 @@
+res://
+res://images/enemy_sprites/enemy_mons
+res://images/bg_designs
+res://movements/run
 res://gui
 res://movements/attacks
-res://
 res://images/enemy_sprites/enemy_bird
 res://sprites/enemy_sprites
 res://sprites/object_sprites

@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://c5dpmccf804dl"]
+[gd_scene load_steps=67 format=3 uid="uid://c5dpmccf804dl"]
 
 [ext_resource type="Script" path="res://sprites/enemy_sprites/enemy_goblini.gd" id="1_1r8fw"]
 [ext_resource type="Texture2D" uid="uid://0x1qvamaeqod" path="res://images/enemy_sprites/gobline_idle.png" id="1_akijq"]
@@ -403,6 +403,9 @@ size = Vector2(214.713, 233)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3bpqk"]
 size = Vector2(479.125, 92)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucek7"]
+size = Vector2(735.563, 92)
+
 [node name="enemy_goblin" type="CharacterBody2D"]
 position = Vector2(6, -2)
 collision_layer = 0
@@ -459,8 +462,8 @@ debug_color = Color(0.788235, 0.14902, 0.968627, 0.231373)
 [node name="TeritoryRight" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TeritoryRight"]
-position = Vector2(284, 0)
-shape = SubResource("RectangleShape2D_3bpqk")
+position = Vector2(412.219, 0)
+shape = SubResource("RectangleShape2D_ucek7")
 debug_color = Color(0.788235, 0.14902, 0.968627, 0.231373)
 
 [node name="Timer" type="Timer" parent="."]

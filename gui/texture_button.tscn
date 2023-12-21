@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dlfsep6h1p3iu"]
 
 [ext_resource type="Texture2D" uid="uid://dy3xt2wq2fnxh" path="res://images/gui/melee1.png" id="1_d2sv5"]
-[ext_resource type="Script" path="res://TextureButton.gd" id="2_qfmwb"]
+[ext_resource type="Script" path="res://gui/texture_button_attack.gd" id="2_3ki46"]
 
 [node name="TextureButton" type="TextureButton"]
 custom_minimum_size = Vector2(32, 32)
@@ -9,7 +9,7 @@ offset_right = 32.0
 offset_bottom = 32.0
 scale = Vector2(1.9628, 2.08766)
 texture_normal = ExtResource("1_d2sv5")
-script = ExtResource("2_qfmwb")
+script = ExtResource("2_3ki46")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 modulate = Color(0.0941176, 0.0941176, 0.0941176, 0.780392)
@@ -21,25 +21,25 @@ fill_mode = 5
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 18.8032
-offset_top = 21.1536
-offset_right = 58.8032
-offset_bottom = 47.1536
+offset_left = 14.2653
+offset_top = 21.0762
+offset_right = 54.2653
+offset_bottom = 47.0762
 scale = Vector2(0.492134, 0.492134)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "0.0"
+text = "0.0s"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 1.52843
-offset_top = -3.35303
-offset_right = 41.5284
-offset_bottom = 22.647
-scale = Vector2(0.850888, 0.850888)
+offset_left = 0.509476
+offset_top = -1.43702
+offset_right = 44.5095
+offset_bottom = 24.563
+scale = Vector2(0.570395, 0.570395)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "X"

@@ -34,7 +34,7 @@ func _physics_process(delta):
 
 
 func _on_bird_fire_body_entered(body):
-	if body.name=="hero" or body.name=="StaticBody2D":
+	if body.name=="hero":
 		anim.play("hit")
 		global.player_hurt(parent.damage)
 		

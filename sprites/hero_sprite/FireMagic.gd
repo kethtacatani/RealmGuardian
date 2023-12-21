@@ -26,6 +26,7 @@ func _ready():
 func _physics_process(delta):
 	if Input.is_action_just_pressed("fire_magic") and global.player_health!=0 and not global.attacking and global.can_range2:
 		$FireDelay.start()
+		
 	velocity.x = direction * speed
 	
 	
@@ -44,6 +45,8 @@ func _physics_process(delta):
 func attack_fire_magic():
 	direction= 1 if global.player_direction==1 else -1
 	firing = true
+	global.attacking=false
+	
 	if direction==1:
 		global_position.x = global.player_pos-30
 		anim.flip_h=false
@@ -90,6 +93,9 @@ func _on_fire_delay_timeout():
 func _on_fire_out_timeout():
 	anim.play("fire_out")
 	
+
+
+
 
 
 

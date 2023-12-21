@@ -11,3 +11,8 @@ func _process(delta):
 	
 	
 	
+
+
+func _on_portal_body_entered(body):
+	if body.name=="hero":
+		get_tree().change_scene_to_file("res://castle.tscn")

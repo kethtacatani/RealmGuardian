@@ -1,27 +1,84 @@
-[gd_scene load_steps=25 format=3 uid="uid://x1u4l6nmc63c"]
+[gd_scene load_steps=41 format=3 uid="uid://x1u4l6nmc63c"]
 
 [ext_resource type="Texture2D" uid="uid://bbf2k0mp0tsc3" path="res://images/background/orig  long.png" id="1_3styl"]
+[ext_resource type="Script" path="res://main_scene.gd" id="1_cmpv5"]
 [ext_resource type="PackedScene" uid="uid://d0prfais6v0l0" path="res://sprites/hero_sprite/hero.tscn" id="1_o6tn1"]
 [ext_resource type="PackedScene" uid="uid://b0mga28lj3ruh" path="res://sprites/npc_sprites/injured_knight.tscn" id="3_m6t8v"]
 [ext_resource type="Texture2D" uid="uid://cgoklb7mwa7r8" path="res://images/background/8 long.png" id="3_q6pwe"]
 [ext_resource type="Texture2D" uid="uid://bkjj4lxhbj3ys" path="res://images/background/8 long2.png" id="4_3ntcg"]
 [ext_resource type="PackedScene" uid="uid://d3boywo6mhwmc" path="res://sprites/object_sprites/cloud.tscn" id="4_ue5xg"]
+[ext_resource type="Texture2D" uid="uid://cgexj6mj0thqn" path="res://images/bg_designs/pilar6flip.png" id="5_2jlh8"]
 [ext_resource type="PackedScene" uid="uid://c5dpmccf804dl" path="res://sprites/enemy_sprites/enemy_goblini.tscn" id="5_08rp5"]
+[ext_resource type="Texture2D" uid="uid://bqnr15ay5755k" path="res://images/bg_designs/pilar6.png" id="5_muud8"]
 [ext_resource type="PackedScene" uid="uid://cep2krsq22ntt" path="res://sprites/enemy_sprites/enemy_bird.tscn" id="6_vfccq"]
 [ext_resource type="PackedScene" uid="uid://dlfsep6h1p3iu" path="res://gui/texture_button.tscn" id="7_00krn"]
+[ext_resource type="PackedScene" uid="uid://d0771am6mbmbb" path="res://sprites/npc_sprites/fairy.tscn" id="7_c3nkb"]
 [ext_resource type="Texture2D" uid="uid://c2xdansa7f3y0" path="res://images/gui/healthbar.png" id="8_1glrx"]
+[ext_resource type="Texture2D" uid="uid://cl23f5aao6fha" path="res://images/bg_designs/pilar3.png" id="8_7ij7u"]
+[ext_resource type="Texture2D" uid="uid://ig1y2lgm2cb2" path="res://images/bg_designs/pilar5.png" id="9_tdgb0"]
 [ext_resource type="Texture2D" uid="uid://bpo1wog1qwc8x" path="res://images/gui/healthbar_progress.png" id="9_ufl0k"]
 [ext_resource type="Script" path="res://HealthBar.gd" id="10_2s6ys"]
+[ext_resource type="Texture2D" uid="uid://eju71jqqlyam" path="res://images/bg_designs/pilar2.png" id="10_5d0w1"]
 [ext_resource type="Texture2D" uid="uid://csk4qehqjitqm" path="res://images/gui/healthbar_transparent.png" id="10_puwuy"]
 [ext_resource type="Texture2D" uid="uid://bsvxi2kftp0ro" path="res://images/gui/circle.png" id="11_ehi2x"]
 [ext_resource type="FontFile" uid="uid://brm1t2uo6pgcu" path="res://fonts/alagard.ttf" id="11_ngw02"]
 [ext_resource type="Script" path="res://level_label.gd" id="12_4jmvg"]
 [ext_resource type="Script" path="res://LevelExp.gd" id="12_tp16k"]
+[ext_resource type="PackedScene" uid="uid://dhlvwssyvoth8" path="res://mons.tscn" id="13_ceqsl"]
 [ext_resource type="Script" path="res://Health.gd" id="13_vp2iw"]
 [ext_resource type="Texture2D" uid="uid://c71rki1cm3bo4" path="res://images/gui/skill_gui.png" id="18_xerhh"]
+[ext_resource type="PackedScene" uid="uid://by8toenblh7os" path="res://gui/dash.tscn" id="19_3m120"]
 [ext_resource type="PackedScene" uid="uid://dg6nqs1ihxg32" path="res://gui/range2_button.tscn" id="19_kyobt"]
 [ext_resource type="PackedScene" uid="uid://c43pf2i61vbxt" path="res://gui/range1_button.tscn" id="20_l8eah"]
 [ext_resource type="Texture2D" uid="uid://3jacesxdxik5" path="res://images/gui/skill_gui_trans.png" id="22_gxjwv"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o5yq8"]
+texture = ExtResource("9_tdgb0")
+2:4/size_in_atlas = Vector2i(13, 6)
+2:4/0 = 0
+2:4/0/y_sort_origin = -21
+2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:4/0/physics_layer_0/angular_velocity = 0.0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-96.8736, -46.6691, 100.056, -47.3762, 101.116, 48.0833, -95.4594, 53.7401)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cow1h"]
+texture = ExtResource("10_5d0w1")
+1:3/size_in_atlas = Vector2i(11, 25)
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0fgcx"]
+texture = ExtResource("5_muud8")
+1:2/size_in_atlas = Vector2i(12, 7)
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-83.7922, -42.4264, -14.4957, -41.0122, 27.9307, -21.9203, 54.8008, -9.8995, 79.5495, 14.1421, 96.5201, 32.5269, 98.6414, 56.5685, -82.3779, 54.4472)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gbeng"]
+texture = ExtResource("5_2jlh8")
+0:3/size_in_atlas = Vector2i(12, 6)
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-84.4993, 21.2132, -26.5165, -23.3345, 24.3952, -46.6691, 69.65, -45.9619, 100.056, -45.9619, 107.127, 34.6482, 100.763, 48.7904, -127.633, 59.397)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ql8b"]
+texture = ExtResource("8_7ij7u")
+margins = Vector2i(15, 0)
+0:2/size_in_atlas = Vector2i(9, 21)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_30isg"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_o5yq8")
+sources/2 = SubResource("TileSetAtlasSource_cow1h")
+sources/3 = SubResource("TileSetAtlasSource_0fgcx")
+sources/4 = SubResource("TileSetAtlasSource_gbeng")
+sources/5 = SubResource("TileSetAtlasSource_6ql8b")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7canv"]
 size = Vector2(18911.8, 129)
@@ -29,7 +86,11 @@ size = Vector2(18911.8, 129)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2rbug"]
 size = Vector2(108, 1726.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwqi3"]
+size = Vector2(98.5, 379.5)
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_cmpv5")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -888.0
@@ -49,6 +110,46 @@ scale = Vector2(1.2604, 1.2604)
 texture = ExtResource("1_3styl")
 expand_mode = 3
 
+[node name="TileMap" type="TileMap" parent="."]
+y_sort_enabled = true
+position = Vector2(7169, 116)
+tile_set = SubResource("TileSet_30isg")
+format = 2
+layer_0/name = "pillars"
+layer_0/y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(65590, 458753, 4, 65672, 131074, 5, 196655, 5, 2, 139, 65538, 3, 262730, 65538, 3)
+layer_1/name = "platform"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = true
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(1376288, 131072, 4, 1376300, 131072, 4, 1376312, 131072, 4, 1376325, 131072, 4, 1376322, 131072, 4, 1376336, 131072, 4, 1376349, 131072, 4, 1376361, 131072, 4, 1376372, 131072, 4, 1376383, 131072, 4, 1376394, 131072, 4, 983079, 131072, 4, 983090, 131072, 4, 983102, 131072, 4, 983114, 131072, 4, 983122, 131072, 4, 983133, 131072, 4, 983145, 131072, 4, 983157, 131072, 4, 983169, 131072, 4, 983181, 131072, 4, 1376406, 131072, 4, 1376418, 131072, 4, 983192, 65539, 2, 1376429, 65539, 2, 1376276, 131072, 4, 1376264, 4, 3, 1245735, 131072, 4, 1245747, 131072, 4, 1245758, 131072, 4, 1245770, 131072, 4, 983068, 4, 3)
+
+[node name="background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pilar" type="TextureRect" parent="background"]
+layout_mode = 0
+offset_left = 6547.0
+offset_top = 232.0
+offset_right = 6706.0
+offset_bottom = 616.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_7ij7u")
+
+[node name="Pilar3" type="TextureRect" parent="background"]
+layout_mode = 0
+offset_left = 6864.0
+offset_top = 174.0
+offset_right = 7060.0
+offset_bottom = 695.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("10_5d0w1")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -57,15 +158,60 @@ scale = Vector2(1.03523, 1)
 shape = SubResource("RectangleShape2D_7canv")
 
 [node name="enemy_goblin" parent="StaticBody2D" instance=ExtResource("5_08rp5")]
-position = Vector2(3376, 414)
+position = Vector2(2415, 420)
 scale = Vector2(1.43364, 1.43364)
 
 [node name="enemy_goblin2" parent="StaticBody2D" instance=ExtResource("5_08rp5")]
-position = Vector2(504, 408)
+position = Vector2(2415, 420)
+scale = Vector2(1.43364, 1.43364)
+
+[node name="enemy_goblin3" parent="StaticBody2D" instance=ExtResource("5_08rp5")]
+position = Vector2(5067, 402)
+scale = Vector2(1.43364, 1.43364)
+
+[node name="enemy_goblin4" parent="StaticBody2D" instance=ExtResource("5_08rp5")]
+y_sort_enabled = true
+position = Vector2(8786, 250)
 scale = Vector2(1.43364, 1.43364)
 
 [node name="enemy_bird2" parent="StaticBody2D" instance=ExtResource("6_vfccq")]
-position = Vector2(3300, 206)
+position = Vector2(5062, 218)
+
+[node name="enemy_goblin5" parent="StaticBody2D" instance=ExtResource("5_08rp5")]
+position = Vector2(8786, 250)
+scale = Vector2(1.43364, 1.43364)
+
+[node name="enemy_goblin6" parent="StaticBody2D" instance=ExtResource("5_08rp5")]
+position = Vector2(8786, 250)
+scale = Vector2(1.43364, 1.43364)
+
+[node name="enemy_bird3" parent="StaticBody2D" instance=ExtResource("6_vfccq")]
+position = Vector2(8775, 83)
+
+[node name="enemy_goblin7" parent="StaticBody2D" instance=ExtResource("5_08rp5")]
+position = Vector2(11874, 400)
+scale = Vector2(1.43364, 1.43364)
+
+[node name="enemy_goblin8" parent="StaticBody2D" instance=ExtResource("5_08rp5")]
+position = Vector2(11874, 400)
+scale = Vector2(1.43364, 1.43364)
+
+[node name="enemy_bird4" parent="StaticBody2D" instance=ExtResource("6_vfccq")]
+position = Vector2(11863, 233)
+
+[node name="enemy_goblin9" parent="StaticBody2D" instance=ExtResource("5_08rp5")]
+position = Vector2(15157, 402)
+scale = Vector2(1.43364, 1.43364)
+
+[node name="enemy_goblin10" parent="StaticBody2D" instance=ExtResource("5_08rp5")]
+position = Vector2(15157, 402)
+scale = Vector2(1.43364, 1.43364)
+
+[node name="mons" parent="StaticBody2D" instance=ExtResource("13_ceqsl")]
+position = Vector2(15143, 386)
+
+[node name="enemy_bird5" parent="StaticBody2D" instance=ExtResource("6_vfccq")]
+position = Vector2(15146, 235)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-940, 177)
@@ -75,20 +221,46 @@ shape = SubResource("RectangleShape2D_2rbug")
 position = Vector2(16588, -382.75)
 shape = SubResource("RectangleShape2D_2rbug")
 
-[node name="AnimatedSprite2D" parent="StaticBody2D" instance=ExtResource("4_ue5xg")]
-position = Vector2(1444, 338)
+[node name="notify2" parent="StaticBody2D" instance=ExtResource("4_ue5xg")]
+position = Vector2(6729, 299)
 scale = Vector2(1.40184, 1.40184)
 
+[node name="fairy" parent="StaticBody2D" instance=ExtResource("7_c3nkb")]
+position = Vector2(6712, 468)
+scale = Vector2(5.71646, 5.71646)
+
 [node name="hero" parent="StaticBody2D" instance=ExtResource("1_o6tn1")]
-position = Vector2(-197, 310)
+position = Vector2(-569, 187)
 scale = Vector2(2.67137, 2.67137)
 
+[node name="notify" parent="StaticBody2D" instance=ExtResource("4_ue5xg")]
+position = Vector2(1034, 333)
+scale = Vector2(1.40184, 1.40184)
+
 [node name="injured_knight" parent="StaticBody2D" instance=ExtResource("3_m6t8v")]
-position = Vector2(1434, 429)
+position = Vector2(1024, 424)
 scale = Vector2(4.54799, 4.54799)
 
-[node name="enemy_bird" parent="StaticBody2D" instance=ExtResource("6_vfccq")]
-position = Vector2(754, 212)
+[node name="Portal" type="Area2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Portal"]
+position = Vector2(16475.3, 191.75)
+shape = SubResource("RectangleShape2D_xwqi3")
+
+[node name="foreground" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pilar2" type="TextureRect" parent="foreground"]
+layout_mode = 0
+offset_left = 6780.0
+offset_top = 393.0
+offset_right = 7067.0
+offset_bottom = 557.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_tdgb0")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 offset_left = -888.0
@@ -198,9 +370,9 @@ texture = ExtResource("10_puwuy")
 [node name="Skills" type="Control" parent="GUI"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 551.0
+offset_left = 483.0
 offset_top = 565.0
-offset_right = 591.0
+offset_right = 523.0
 offset_bottom = 605.0
 scale = Vector2(0.6, 0.6)
 
@@ -212,34 +384,44 @@ offset_right = 1256.0
 offset_bottom = 921.0
 texture = ExtResource("18_xerhh")
 
+[node name="TextureButton4" parent="GUI/Skills" instance=ExtResource("19_3m120")]
+layout_mode = 0
+offset_left = 290.0
+offset_top = 576.667
+offset_right = 322.0
+offset_bottom = 608.667
+scale = Vector2(5.448, 5.795)
+
 [node name="TextureButton" parent="GUI/Skills" instance=ExtResource("7_00krn")]
 layout_mode = 0
-offset_left = 273.683
-offset_top = 577.945
-offset_right = 305.683
-offset_bottom = 609.945
+offset_left = 476.667
+offset_top = 576.667
+offset_right = 508.667
+offset_bottom = 608.667
 scale = Vector2(5.44775, 5.79429)
 
 [node name="TextureButton3" parent="GUI/Skills" instance=ExtResource("20_l8eah")]
 layout_mode = 0
-offset_left = 466.683
-offset_top = 579.945
-offset_right = 498.683
-offset_bottom = 611.945
+offset_left = 663.0
+offset_top = 578.667
+offset_right = 695.0
+offset_bottom = 610.667
 scale = Vector2(5.448, 5.795)
 
 [node name="TextureButton2" parent="GUI/Skills" instance=ExtResource("19_kyobt")]
 layout_mode = 0
-offset_left = 660.683
-offset_top = 578.945
-offset_right = 692.683
-offset_bottom = 610.945
+offset_left = 857.0
+offset_top = 577.667
+offset_right = 889.0
+offset_bottom = 609.667
 scale = Vector2(5.448, 5.795)
 
 [node name="TextureRect2" type="TextureRect" parent="GUI/Skills"]
 layout_mode = 0
-offset_left = 89.0
+offset_left = 87.3333
 offset_top = 436.0
-offset_right = 1256.0
+offset_right = 1456.33
 offset_bottom = 921.0
 texture = ExtResource("22_gxjwv")
+
+[connection signal="body_entered" from="StaticBody2D/Portal" to="." method="_on_portal_body_entered"]

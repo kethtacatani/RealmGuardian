@@ -21,14 +21,14 @@ fill_mode = 5
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 18.8032
+offset_left = 14.2179
 offset_top = 21.1536
-offset_right = 58.8032
+offset_right = 54.2179
 offset_bottom = 47.1536
 scale = Vector2(0.492134, 0.492134)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "0.0"
+text = "0.0s"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -36,10 +36,10 @@ one_shot = true
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
 offset_left = 1.52843
-offset_top = -3.35303
+offset_top = -1.43702
 offset_right = 41.5284
-offset_bottom = 22.647
-scale = Vector2(0.850888, 0.850888)
+offset_bottom = 24.563
+scale = Vector2(0.588, 0.588)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "C"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://d0prfais6v0l0"]
+[gd_scene load_steps=100 format=3 uid="uid://d0prfais6v0l0"]
 
 [ext_resource type="Script" path="res://sprites/hero_sprite/hero.gd" id="1_gu7lq"]
 [ext_resource type="PackedScene" uid="uid://c2lpfw2vjwwk3" path="res://fire_magic.tscn" id="2_3kfa1"]
@@ -52,6 +52,10 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j8h5c"]
 radius = 7.68651
 height = 30.7461
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6w8t"]
+atlas = ExtResource("24_uqqql")
+region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q1d0t"]
 atlas = ExtResource("2_w361j")
@@ -271,6 +275,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_c6w8t")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_528bg")
 }, {
 "duration": 1.0,
@@ -409,7 +421,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4a1w8")
 }, {
-"duration": 5.0,
+"duration": 5.5,
 "texture": SubResource("AtlasTexture_qlwo5")
 }],
 "loop": false,
@@ -607,15 +619,13 @@ position = Vector2(1.02487, -16.3979)
 scale = Vector2(0.494629, 0.494629)
 sprite_frames = SubResource("SpriteFrames_c1ogu")
 animation = &"range1"
-frame = 5
-frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="hero/CollisionShape2D/AnimatedSprite2D"]
 position = Vector2(56.9766, 37.2959)
 scale = Vector2(-0.000572711, 39.6425)
 offset = Vector2(0, -200)
 limit_left = -888
-limit_top = -886
+limit_top = -40000
 limit_right = 16531
 limit_bottom = 900
 limit_smoothed = true
@@ -648,10 +658,13 @@ one_shot = true
 wait_time = 10.0
 autostart = true
 
-[node name="Timer" type="Timer" parent="hero"]
+[node name="TimerDash" type="Timer" parent="hero"]
+wait_time = 0.08
+one_shot = true
 
 [connection signal="animation_finished" from="hero/CollisionShape2D/AnimatedSprite2D" to="hero" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="hero/melee_attack1" to="hero" method="_on_melee_attack_1_area_entered"]
 [connection signal="timeout" from="hero/MeleeTimer" to="hero" method="_on_melee_timer_timeout"]
 [connection signal="timeout" from="hero/Range1Timer" to="hero" method="_on_range_1_timer_timeout"]
 [connection signal="timeout" from="hero/Range2Timer" to="hero" method="_on_range_2_timer_timeout"]
+[connection signal="timeout" from="hero/TimerDash" to="hero" method="_on_timer_dash_timeout"]

@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-
-
-var SPEED = 450.0 #380
-var JUMP_VELOCITY = -700.0
+var default_speed=450
+var speed = default_speed #380
+var default_jump_velocity= -750
+var JUMP_VELOCITY = default_jump_velocity
+var motion= Vector2()
 var prevX=0
 var prevY=0
 var has_double_jump=false
@@ -12,10 +13,12 @@ var attack_facing_lock=false
 var direction=1
 var was_in_air= false
 var facing_right=true
-var new_game=false
+var new_game=true
 var health_bar
 var dead= false
 var default_gravity=1200
+var can_dash=true
+
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -36,10 +39,10 @@ func _physics_process(delta):
 	# Add the gravity.
 #	print("x: ",prevX)
 #	print("y: ",prevY)
+#	print(global_position)
 	if_dead()
 	global.player_pos= global_position.x
 	global.player_pos_y= global_position.y
-
 	
 	if new_game && is_on_floor():
 		new_game=false
@@ -57,18 +60,16 @@ func _physics_process(delta):
 			land()	
 			was_in_air=false;	
 		
-		
 	if global.is_in_dialogue:
 		if is_on_floor():	
 			anim.play("idle")
 			animation_locked=false
-			print("id")
 			return
 	else:
 			pass
 			
-	
-	# Handle Jump.
+	if can_dash:
+		direction = Input.get_axis("ui_left", "ui_right")
 	
 	if Input.is_action_just_pressed("ui_accept") and not dead:
 		#double jump
@@ -77,26 +78,24 @@ func _physics_process(delta):
 		elif not has_double_jump and not is_on_floor():
 			double_jump()
 	#handle melee_attack1
-	if Input.is_action_just_pressed("melee_attack1") and not dead and global.can_melee1:
-		$MeleeTimer.wait_time=global.melee1_cooldown
-		global.can_melee1=false
-		$MeleeTimer.start()
+	if Input.is_action_just_pressed("melee_attack1") and not dead and global.can_melee1 and can_dash:
 		attack_melee1()
-	if Input.is_action_just_pressed("fire_arrow") and not dead and global.can_range1:
-		$Range1Timer.wait_time=global.range1_cooldown
-		global.can_range1=false
-		$Range1Timer.start()
+	if Input.is_action_just_pressed("fire_arrow") and not dead and global.can_range1 and can_dash:
 		attack_range1()
 		
-	if Input.is_action_just_pressed("fire_magic") and not dead and global.can_range2:
-		$Range2Timer.wait_time=global.range2_cooldown
-		global.can_range2=false
-		$Range2Timer.start()
+	if Input.is_action_just_pressed("fire_magic") and not dead and global.can_range2 and can_dash:
 		attack_range2()
-		print("can")
-	
+		
+	if Input.is_action_just_pressed("dash") and not dead and global.can_dash and not global.attacking:
+		anim.play("dash")
+		can_dash=false
+		direction= 1 if facing_right else -1
+		animation_locked=true
+		speed=2000
+		attack_facing_lock=true
+		velocity.x = direction * speed
 			
-	direction = Input.get_axis("ui_left", "ui_right")
+	
 	
 	if not is_on_floor():
 		jump_anim()
@@ -121,11 +120,10 @@ func attack_melee1():
 		anim.play("attack_melee1")
 		animation_locked=true
 		attack_facing_lock=true
-		global.attacking=true
 		if  is_on_floor():
 			stop_move()
 		else:
-			velocity.x = direction * SPEED*0.5
+			velocity.x = direction * speed*0.5
 
 func attack_range2():
 		if not global.attacking:
@@ -135,7 +133,6 @@ func attack_range2():
 				anim.play("range2_jump")
 			animation_locked=true
 			attack_facing_lock=true
-			global.attacking=true
 		#	gravity=30
 		#	velocity.x = direction * SPEED*0.2
 		#	velocity.y = direction * SPEED*0.2
@@ -151,7 +148,6 @@ func attack_range1():
 #				anim.play("range1_jump")
 			animation_locked=true
 			attack_facing_lock=true
-			global.attacking=true
 		#	gravity=30
 		#	velocity.x = direction * SPEED*0.2
 		#	velocity.y = direction * SPEED*0.2
@@ -174,7 +170,7 @@ func if_dead():
 func update_animation():
 	if not animation_locked:
 		if direction:
-			velocity.x = direction * SPEED
+			velocity.x = direction * speed				
 			if is_on_floor():
 				anim.play('run')	
 #				print(direction)	
@@ -209,7 +205,7 @@ func jump_anim():
 			anim.play("jump_up_loop")
 		else:
 			anim.play("jump_down_loop")
-			velocity.x = direction * SPEED*0.5
+			velocity.x = direction * speed*0.5
 			animation_locked=true
 	
 	
@@ -234,8 +230,8 @@ func land():
 	
 	
 func stop_move():
-	velocity.x = move_toward(velocity.x, 0, SPEED)
-	velocity.y = move_toward(velocity.y, 0, SPEED)
+	velocity.x = move_toward(velocity.x, 0, speed)
+	velocity.y = move_toward(velocity.y, 0, speed)
 	
 	
 	
@@ -253,6 +249,7 @@ func _on_animated_sprite_2d_animation_finished():
 	if(anim.animation=="attack_melee1"):
 		animation_locked=false
 		attack_facing_lock=false
+		global.attacking=false
 		remove_child(melee_area)
 		global.attacking=false
 	if(anim.animation=="range2" or anim.animation=="range2_jump"):
@@ -265,6 +262,13 @@ func _on_animated_sprite_2d_animation_finished():
 		animation_locked=false
 		attack_facing_lock=false
 		global.attacking=false
+	if(anim.animation=="dash"):
+		print("finished")
+		can_dash=true
+		global.attacking=false
+		speed=default_speed
+		animation_locked=false
+		attack_facing_lock=false
 		
 
 
@@ -274,21 +278,3 @@ func _on_animated_sprite_2d_animation_finished():
 
 
 
-
-func _on_melee_attack_1_area_entered(area):
-	pass # Replace with function body.
-
-
-	
-
-
-func _on_melee_timer_timeout():
-	global.can_melee1=true
-
-
-func _on_range_1_timer_timeout():
-	global.can_range1=true
-
-
-func _on_range_2_timer_timeout():
-	global.can_range2=true

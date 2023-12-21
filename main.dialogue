@@ -20,6 +20,63 @@ if global.knight_dead ==false
 
 => END
 
+~ fairy
+set global.is_in_dialogue=true
+Prince Aelarion :  Approaches cautiously You must be the fairy?
+- Continue...
+	Fairy Guardian : I am but a humble sprite, guardian of these enchanted orbs. They hold the essence of ancient powers, awaiting a valiant soul to claim their might.
+	- Continue...
+		Prince Aelarion : What do these orbs do?
+		- Continue...
+			Fairy Guardian : Each carries a distinct boon, empowering the bearer in their quests. The Shielding Aegis wards off harm, the Bladebane Radiance fortifies your strikes, the Chrono Essentia quickens your actions, and the Revitalizing Seraph rejuvenates your spirit.
+			- Continue...
+				Prince Aelarion : What do these orbs do?
+				- Continue...
+					Fairy Guardian : Your heart shall guide you. Tell me, noble wanderer, what stirs within your soul? What drives your journey?
+					- Continue...
+						Fairy Guardian : The Shielding Aegis shall resonate with your noble cause. Its embrace shall lessen the blows that seek to harm you and those around you.  
+						- Continue...
+							Fairy Guardian : The Bladebane Radiance shall echo your quest for righteousness. Its power shall amplify your attacks, making each strike a testament to your cause.
+							- Continue...
+								Fairy Guardian : The Chrono Essentia shall align with your need for haste. Its influence shall shorten the moments between your actions, granting you swiftness beyond compare.
+								- Continue...
+									Fairy Guardian : The Revitalizing Seraph shall bolster your resilience. Its gentle embrace shall mend your wounds and fuel your perseverance. Will you claim this orb as your ally?
+									- Shielding Aegis(Damage Reduction - 10%)
+										Fairy Guardian : The Shielding Aegis, a guardian's choice. May its protective embrace shield you and those under your watchful eye from harm's reach.
+										- Continue... 
+											Prince Aelarion : Thank you, dear fairy. With the Shielding Aegis, I'll be an unwavering shield for those in need.
+											- End
+											set global.is_in_dialogue=false
+											set global.fairy_talked=true
+											set global.received_orb("Shielding Aegis")
+									- Bladebane Radiance(Additional Damage - 10%)
+										Fairy Guardian : The Bladebane Radiance, a warrior's pick. Let its luminous power fortify your every strike, cutting through the shadows that threaten your noble cause.
+										- Continue...
+											Prince Aelarion : I'm grateful, fairy. With the Bladebane Radiance, my strikes will carry the light of justice.
+											- End
+											set global.is_in_dialogue=false
+											set global.fairy_talked=true
+											set global.received_orb("Bladebane Radiance")
+									- Chrono Essentia(Cooldown Reduction - 10%)
+										Fairy Guardian : The Chrono Essentia, a seeker of swiftness. May its accelerated rhythm align with your purpose, allowing you to act swiftly against encroaching darkness.
+										- Continue...
+											Prince Aelarion : Thank you kindly. With the Chrono Essentia, I'll move swiftly to face the challenges ahead.
+											- End
+											set global.is_in_dialogue=false
+											set global.fairy_talked=true
+											set global.received_orb("Chrono Essentia")
+									- Revitalizing Seraph(Increased Regeneration - 5%)
+										Fairy Guardian : The Revitalizing Seraph, a bearer of resilience. May its soothing energy mend your wounds and fuel the enduring flame that burns within you, guiding you through trials.
+										- Continue...
+											Prince Aelarion : Many thanks. With the Revitalizing Seraph, I'll endure and stand strong against the tides of darkness.
+											- End
+											set global.is_in_dialogue=false
+											set global.fairy_talked=true
+											set global.received_orb("Revitalizing Seraph")
+										
+				
+=> END
+
 ~ start
 set global.is_in_dialogue=true
 Prince Aelarion :  Back in my home realm... it feels familiar yet different...

@@ -1,0 +1,81 @@
+[gd_scene load_steps=14 format=3 uid="uid://d0771am6mbmbb"]
+
+[ext_resource type="Script" path="res://sprites/npc_sprites/fairy.gd" id="1_i8g12"]
+[ext_resource type="Texture2D" uid="uid://sb5qj5m1aa0d" path="res://sprites/npc_sprites/fairy_sprites/Idle1.png" id="2_p6ycl"]
+[ext_resource type="Texture2D" uid="uid://5va7i4px44a3" path="res://sprites/npc_sprites/fairy_sprites/Idle2.png" id="3_bjjxo"]
+[ext_resource type="Texture2D" uid="uid://d2gs875lds4mm" path="res://sprites/npc_sprites/fairy_sprites/Idle3.png" id="4_atn2w"]
+[ext_resource type="Texture2D" uid="uid://k6lrydkh14cm" path="res://sprites/npc_sprites/fairy_sprites/Idle4.png" id="5_fngat"]
+[ext_resource type="Texture2D" uid="uid://n1hdllu2y7ox" path="res://sprites/npc_sprites/fairy_sprites/Idle5.png" id="6_kb2sc"]
+[ext_resource type="Texture2D" uid="uid://c7dfehqg405rb" path="res://sprites/npc_sprites/fairy_sprites/Idle6.png" id="7_nygau"]
+[ext_resource type="Texture2D" uid="uid://n0k48mrbrscc" path="res://sprites/npc_sprites/fairy_sprites/Idle7.png" id="8_rgbdf"]
+[ext_resource type="Texture2D" uid="uid://bd4ulee0nkgsv" path="res://sprites/npc_sprites/fairy_sprites/Idle8.png" id="9_h6pga"]
+[ext_resource type="Texture2D" uid="uid://8p2dsh2fb2kt" path="res://sprites/npc_sprites/fairy_sprites/Idle9.png" id="10_wguke"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q0dsl"]
+radius = 126.985
+height = 1386.17
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8no8t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p6ycl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bjjxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_atn2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fngat")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kb2sc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nygau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rgbdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h6pga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wguke")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tjmo"]
+size = Vector2(29, 47)
+
+[node name="fairy" type="CharacterBody2D"]
+script = ExtResource("1_i8g12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -252)
+scale = Vector2(-0.0866245, 0.0100997)
+shape = SubResource("CapsuleShape2D_q0dsl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(-23.0882, 23664)
+rotation = 3.14159
+scale = Vector2(6.46531, -55.4523)
+sprite_frames = SubResource("SpriteFrames_8no8t")
+animation = &"idle"
+frame_progress = 0.188679
+
+[node name="Area2D" type="Area2D" parent="." groups=["non_enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4.5, -12.5)
+shape = SubResource("RectangleShape2D_8tjmo")
+debug_color = Color(0.94902, 0, 0.580392, 0.419608)
+
+[connection signal="animation_finished" from="CollisionShape2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

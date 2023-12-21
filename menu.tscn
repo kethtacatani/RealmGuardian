@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://3e2viy61t8xv"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_ufa24"]
+[ext_resource type="FontFile" uid="uid://dt4gdd0e7yu32" path="res://fonts/8-BIT WONDER.TTF" id="2_owfn8"]
+[ext_resource type="Texture2D" uid="uid://d1vcut60r77s4" path="res://images/gui/images (17).jpeg" id="2_qfsa8"]
+[ext_resource type="Texture2D" uid="uid://bul7pln2qf86v" path="res://images/logo.png" id="3_sf4sc"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ufa24")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -36.0
+offset_top = -462.0
+offset_right = 583.0
+offset_bottom = 33.0
+scale = Vector2(3.54335, 3.26103)
+texture = ExtResource("2_qfsa8")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 652.0
+offset_top = 664.0
+offset_right = 1291.0
+offset_bottom = 954.0
+scale = Vector2(1.00244, 1.00244)
+texture = ExtResource("3_sf4sc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 681.0
+offset_top = 292.0
+offset_right = 793.0
+offset_bottom = 372.0
+scale = Vector2(4.95705, 4.95705)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_owfn8")
+text = "Play"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_owfn8")
+text = "Options"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_owfn8")
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

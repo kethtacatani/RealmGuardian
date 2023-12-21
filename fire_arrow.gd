@@ -23,7 +23,9 @@ func _ready():
 func _physics_process(delta):
 	if Input.is_action_just_pressed("fire_arrow") and global.player_health!=0 and not global.attacking and global.can_range1:
 		$FireDelay.start()
+		direction= 1 if global.player_direction==1 else -1
 	velocity.x = direction * speed
+	
 	
 	
 		
@@ -39,7 +41,8 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func attack_fire_arrow():
-	direction= 1 if global.player_direction==1 else -1
+	global.attacking=false
+	
 	firing = true
 	if direction==1:
 		global_position.x = global.player_pos+120
@@ -71,7 +74,6 @@ func _on_area_2d_area_entered(area):
 
 func _on_animated_sprite_2d_animation_finished():
 	if anim.animation=="fire_hit":
-		print("removed")
 		remove_child(range1)
 		
 
