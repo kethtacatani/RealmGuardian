@@ -42,7 +42,7 @@ func _physics_process(delta):
 	
 func attack_fire_arrow():
 	global.attacking=false
-	
+	$AudioStreamPlayer2D.play()
 	firing = true
 	if direction==1:
 		global_position.x = global.player_pos+120

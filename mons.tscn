@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://dhlvwssyvoth8"]
+[gd_scene load_steps=59 format=3 uid="uid://dhlvwssyvoth8"]
 
 [ext_resource type="Script" path="res://mons.gd" id="1_crtjf"]
 [ext_resource type="Texture2D" uid="uid://sdhixb50mfmj" path="res://images/enemy_sprites/enemy_mons/mons_attack.png" id="2_xtvbi"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://db3tcbtqfvqh8" path="res://images/gui/enemy_health_bar_trans.png" id="8_0tplt"]
 [ext_resource type="Texture2D" uid="uid://bpo1wog1qwc8x" path="res://images/gui/healthbar_progress.png" id="9_wxfy7"]
 [ext_resource type="Script" path="res://monsHealth.gd" id="10_f8ssi"]
+[ext_resource type="AudioStream" uid="uid://cgmfg8gsuju4e" path="res://audio/skills/mons_attack.mp3" id="11_o7dno"]
+[ext_resource type="AudioStream" uid="uid://bs68gv0437sis" path="res://audio/skills/mons_die.wav" id="12_wrnxn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wxc87"]
 atlas = ExtResource("2_xtvbi")
@@ -72,6 +74,10 @@ atlas = ExtResource("3_4dgcg")
 region = Rect2(0, 492, 215, 164)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ljra"]
+atlas = ExtResource("3_4dgcg")
+region = Rect2(215, 492, 215, 164)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp0ei"]
 atlas = ExtResource("3_4dgcg")
 region = Rect2(215, 492, 215, 164)
 
@@ -233,6 +239,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_bp0ei")
+}],
+"loop": true,
+"name": &"dead_dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7x876")
 }, {
 "duration": 1.0,
@@ -337,7 +351,7 @@ script = ExtResource("1_crtjf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qp0ar")
-animation = &"runn"
+animation = &"dead_dead"
 flip_h = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -396,6 +410,12 @@ script = ExtResource("10_f8ssi")
 position = Vector2(-9, 16)
 shape = SubResource("CapsuleShape2D_wtcfk")
 debug_color = Color(0, 0.639216, 0.376471, 0.419608)
+
+[node name="AttackAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_o7dno")
+
+[node name="DieAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_wrnxn")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

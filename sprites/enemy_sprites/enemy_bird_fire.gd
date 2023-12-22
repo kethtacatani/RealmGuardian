@@ -36,6 +36,7 @@ func _physics_process(delta):
 func _on_bird_fire_body_entered(body):
 	if body.name=="hero":
 		anim.play("hit")
+		$FireAudio.play()
 		global.player_hurt(parent.damage)
 		
 		

@@ -91,5 +91,14 @@ Prince Aelarion :  Back in my home realm... it feels familiar yet different...
 				set global.is_in_dialogue=false
 				- Close
 				
+=> END
 
 
+~ end_diag
+set global.is_in_dialogue=true
+Prince Aelarion :  At last... peace. My family must have evacuated...
+- Continue...
+	Prince Aelarion : I have to go to them and make this kingdom rise again...
+	- Exit
+	set global.game_finished=true
+=> END

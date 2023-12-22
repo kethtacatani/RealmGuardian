@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://csuvbjrwt8r5m"]
+[gd_scene load_steps=11 format=3 uid="uid://csuvbjrwt8r5m"]
 
 [ext_resource type="Script" path="res://fire_arrow.gd" id="1_i701s"]
 [ext_resource type="Texture2D" uid="uid://dg0hbwa8awfkh" path="res://movements/attacks/Charge_2.png" id="2_0tfdh"]
+[ext_resource type="AudioStream" uid="uid://bvacloex4aefs" path="res://audio/skills/arrow.wav" id="3_r71on"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wjxp"]
 atlas = ExtResource("2_0tfdh")
@@ -83,6 +84,9 @@ wait_time = 0.1
 [node name="FireDelay" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_r71on")
 
 [connection signal="animation_finished" from="range1/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="FireOut" to="." method="_on_fire_out_timeout"]

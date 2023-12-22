@@ -1,6 +1,7 @@
 extends Control
 
-
+func _ready():
+	$AudioStreamPlayer2D.play()
 
 
 func _on_play_pressed():

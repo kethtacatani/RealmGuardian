@@ -17,7 +17,10 @@ var range1_cooldown=3-((cooldown_reduction/100)*3)
 var range2_cooldown=10-((cooldown_reduction/100)*10)
 var dash_cooldown=5-((cooldown_reduction/100)*5)
 
+var game_finished=false
+var new_game=false
 var knight_dead=false
+var is_on_castle=false
 var fairy_talked=false
 var is_in_dialogue=false
 var player_pos=0.0
@@ -27,16 +30,17 @@ var level=1
 var current_exp=0
 var max_exp=10
 var orb_received=false
+var restart=false
 
-var damage_addition:float=100
-var damage=2+((damage_addition/100)*2)
-var range2_damage=10+((damage_addition/100)*10)
-var range1_damage=4+((damage_addition/100)*4)
+var damage_addition:float=1
+var damage=7+((damage_addition/100)*7)
+var range2_damage=15+((damage_addition/100)*15)
+var range1_damage=9+((damage_addition/100)*9)
 
 var damage_reduction:float=1 #percent relative to damage received
-var enemy_goblin_damage=3
-var enemy_bird_damage=2
-var enemy_mons_damage=4
+var enemy_goblin_damage=2
+var enemy_bird_damage=1
+var enemy_mons_damage=3
 var attacking=false
 
 var goblin_hurt=false

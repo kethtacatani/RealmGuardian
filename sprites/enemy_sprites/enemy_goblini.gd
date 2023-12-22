@@ -79,6 +79,8 @@ func _physics_process(delta):
 #	print("random ",getRandomValue(0,9))
 	random_idle()
 	# Handle Jump.
+	if health<=0:
+		return
 	
 	var movement = speed * delta * direction
 	position.x += movement
@@ -94,7 +96,7 @@ func _physics_process(delta):
 		else:
 				anim.flip_h=false
 				facing_right=true
-	
+
 
 	if not global.enemy_hurt and not healing:
 		timer_heal.start()
@@ -119,6 +121,7 @@ func _physics_process(delta):
 		
 			speed=0
 			animation_locked=true
+			$HitAudio.play()
 		else:
 			if not animation_locked:
 				anim.play("runn")
@@ -172,6 +175,7 @@ func decrease_health():
 			
 func if_dead():
 	if health==0 and not dead:
+		$AudioStreamPlayer2D.play()
 		anim.play("dead")	
 		animation_locked=true
 

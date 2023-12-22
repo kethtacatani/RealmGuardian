@@ -13,7 +13,6 @@ var attack_facing_lock=false
 var direction=1
 var was_in_air= false
 var facing_right=true
-var new_game=true
 var health_bar
 var dead= false
 var default_gravity=1200
@@ -28,6 +27,9 @@ var melee_area
 @onready var anim= get_node("CollisionShape2D/AnimatedSprite2D")
 
 func _ready():	
+	if global.restart:
+		global.player_health=global.player_max_health
+		global.restart=false
 	anim.play('idle')
 	global.player_direction=direction
 	melee_area=$melee_attack1
@@ -40,15 +42,23 @@ func _physics_process(delta):
 #	print("x: ",prevX)
 #	print("y: ",prevY)
 #	print(global_position)
+
+	
+		
+
+	if global.game_finished:
+		$GameFinishAudio.play()
+
 	if_dead()
 	global.player_pos= global_position.x
 	global.player_pos_y= global_position.y
 	
-	if new_game && is_on_floor():
-		new_game=false
+	if global.new_game && is_on_floor():
+		global.new_game=false
 		DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"),"start")
 			
-		
+	if global.is_on_castle:
+		$CollisionShape2D/AnimatedSprite2D/Camera2D.limit_right = 6179
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		was_in_air=true
@@ -88,6 +98,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("dash") and not dead and global.can_dash and not global.attacking:
 		anim.play("dash")
+		$DashAudio.play()
 		can_dash=false
 		direction= 1 if facing_right else -1
 		animation_locked=true
@@ -118,6 +129,7 @@ func attack_melee1():
 	if not global.attacking:
 		add_child(melee_area)
 		anim.play("attack_melee1")
+		$MeleeAudio.play()
 		animation_locked=true
 		attack_facing_lock=true
 		if  is_on_floor():
@@ -162,6 +174,7 @@ func if_dead():
 		if not animation_locked and is_on_floor():
 			anim.play("dead")	
 			animation_locked=true
+			$TimerDead.start()
 			stop_move()
 			dead=true
 			return
@@ -278,3 +291,7 @@ func _on_animated_sprite_2d_animation_finished():
 
 
 
+
+
+func _on_timer_dead_timeout():
+	get_tree().change_scene_to_file("res://game_over.tscn")

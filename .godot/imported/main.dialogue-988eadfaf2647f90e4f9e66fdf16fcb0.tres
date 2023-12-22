@@ -1,11 +1,12 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_bffyh"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_awnt1"]
 
 [resource]
-script = ExtResource("1_bffyh")
+script = ExtResource("1_awnt1")
 using_states = PackedStringArray()
 titles = {
+"end_diag": "98",
 "fairy": "24",
 "injured_knight": "2",
 "start": "81"
@@ -30,6 +31,74 @@ lines = {
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "I'll do what I can to help. Where can I find her?",
 "type": "dialogue"
+},
+"100": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "100",
+"next_id": "101",
+"next_id_after": "104",
+"responses": PackedStringArray("100"),
+"tags": PackedStringArray(),
+"text": "Continue...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Continue...",
+"type": "response"
+},
+"101": {
+"character": "Prince Aelarion",
+"character_replacements": Array[Dictionary]([]),
+"id": "101",
+"next_id": "102",
+"parent_id": "100",
+"tags": PackedStringArray(),
+"text": "I have to go to them and make this kingdom rise again...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "I have to go to them and make this kingdom rise again...",
+"type": "dialogue"
+},
+"102": {
+"character": "",
+"character_replacements": Array[Dictionary]([]),
+"id": "102",
+"next_id": "103",
+"next_id_after": "103",
+"parent_id": "100",
+"responses": PackedStringArray("102"),
+"tags": PackedStringArray(),
+"text": "Exit",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "Exit",
+"type": "response"
+},
+"103": {
+"id": "103",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "global"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "game_finished"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "true"
+}])
+},
+"next_id": "104",
+"parent_id": "100",
+"type": "mutation"
+},
+"104": {
+"id": "104",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
 },
 "11": {
 "character": "",
@@ -1094,7 +1163,7 @@ Eleanore... find her... she's our only hope...",
 "character_replacements": Array[Dictionary]([]),
 "id": "83",
 "next_id": "84",
-"next_id_after": "end!",
+"next_id_after": "94",
 "responses": PackedStringArray("83"),
 "tags": PackedStringArray(),
 "text": "Continue...",
@@ -1119,7 +1188,7 @@ Eleanore... find her... she's our only hope...",
 "character_replacements": Array[Dictionary]([]),
 "id": "85",
 "next_id": "86",
-"next_id_after": "end!",
+"next_id_after": "94",
 "parent_id": "83",
 "responses": PackedStringArray("85"),
 "tags": PackedStringArray(),
@@ -1145,7 +1214,7 @@ Eleanore... find her... she's our only hope...",
 "character_replacements": Array[Dictionary]([]),
 "id": "87",
 "next_id": "88",
-"next_id_after": "end!",
+"next_id_after": "94",
 "parent_id": "85",
 "responses": PackedStringArray("87"),
 "tags": PackedStringArray(),
@@ -1171,7 +1240,7 @@ Eleanore... find her... she's our only hope...",
 "character_replacements": Array[Dictionary]([]),
 "id": "89",
 "next_id": "90",
-"next_id_after": "end!",
+"next_id_after": "94",
 "parent_id": "87",
 "responses": PackedStringArray("89"),
 "tags": PackedStringArray(),
@@ -1235,8 +1304,8 @@ I've missed this place...",
 "character": "",
 "character_replacements": Array[Dictionary]([]),
 "id": "92",
-"next_id": "end!",
-"next_id_after": "end!",
+"next_id": "94",
+"next_id_after": "94",
 "parent_id": "89",
 "responses": PackedStringArray("92"),
 "tags": PackedStringArray(),
@@ -1244,6 +1313,51 @@ I've missed this place...",
 "text_replacements": Array[Dictionary]([]),
 "translation_key": "Close",
 "type": "response"
+},
+"94": {
+"id": "94",
+"is_snippet": false,
+"next_id": "end",
+"type": "goto"
+},
+"97": {
+"id": "97",
+"next_id": "98",
+"text": "end_diag",
+"type": "title"
+},
+"98": {
+"id": "98",
+"mutation": {
+"expression": Array[Dictionary]([{
+"type": "variable",
+"value": "global"
+}, {
+"type": "dot"
+}, {
+"type": "variable",
+"value": "is_in_dialogue"
+}, {
+"type": "assignment",
+"value": "="
+}, {
+"type": "variable",
+"value": "true"
+}])
+},
+"next_id": "99",
+"type": "mutation"
+},
+"99": {
+"character": "Prince Aelarion",
+"character_replacements": Array[Dictionary]([]),
+"id": "99",
+"next_id": "100",
+"tags": PackedStringArray(),
+"text": "At last... peace. My family must have evacuated...",
+"text_replacements": Array[Dictionary]([]),
+"translation_key": "At last... peace. My family must have evacuated...",
+"type": "dialogue"
 }
 }
 metadata/dialogue_manager_version = "2.30.0"

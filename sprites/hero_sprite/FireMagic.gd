@@ -43,6 +43,7 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func attack_fire_magic():
+	$AudioStreamPlayer2D.play()
 	direction= 1 if global.player_direction==1 else -1
 	firing = true
 	global.attacking=false

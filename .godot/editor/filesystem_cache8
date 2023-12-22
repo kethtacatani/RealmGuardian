@@ -1,12 +1,14 @@
 3acdcc5cb6df755358dde907981ccea8
-::res://::1703192474
+::res://::1703226224
 AnimatedSprite2D.gd::GDScript::-1::1701877519::0::1::::<>CharacterBody2D<>::
-castle.tscn::PackedScene::6260890815048577820::1703192474::0::1::::<><>::uid://b23abkbve6x0g::::res://castle_ui/long tiles.png<>uid://d0prfais6v0l0::::res://sprites/hero_sprite/hero.tscn<>uid://bv87ax5dbwbgr::::res://castle_ui/slop.png<>uid://u6f2lf8wuy6w::::res://castle_ui/Sprite Sheet 1.png<>uid://cga360lgudij3::::res://castle_ui/bg_long.png<>uid://cniiaykfena2h::::res://castle_ui/Sprite Sheet 2.png<>uid://c2xdansa7f3y0::::res://images/gui/healthbar.png<>uid://c5dpmccf804dl::::res://sprites/enemy_sprites/enemy_goblini.tscn<>uid://bpo1wog1qwc8x::::res://images/gui/healthbar_progress.png<>res://HealthBar.gd<>uid://cep2krsq22ntt::::res://sprites/enemy_sprites/enemy_bird.tscn<>uid://bsvxi2kftp0ro::::res://images/gui/circle.png<>uid://dhlvwssyvoth8::::res://mons.tscn<>res://LevelExp.gd<>uid://brm1t2uo6pgcu::::res://fonts/alagard.ttf<>res://level_label.gd<>res://Health.gd<>uid://csk4qehqjitqm::::res://images/gui/healthbar_transparent.png<>uid://c71rki1cm3bo4::::res://images/gui/skill_gui.png<>uid://by8toenblh7os::::res://gui/dash.tscn<>uid://dlfsep6h1p3iu::::res://gui/texture_button.tscn<>uid://c43pf2i61vbxt::::res://gui/range1_button.tscn<>uid://dg6nqs1ihxg32::::res://gui/range2_button.tscn<>uid://3jacesxdxik5::::res://images/gui/skill_gui_trans.png
+castle.gd::GDScript::-1::1703211598::0::1::::<>Node2D<>::
+castle.tscn::PackedScene::6260890815048577820::1703225478::0::1::::<><>::res://castle.gd<>uid://b23abkbve6x0g::::res://castle_ui/long tiles.png<>uid://d0prfais6v0l0::::res://sprites/hero_sprite/hero.tscn<>uid://bv87ax5dbwbgr::::res://castle_ui/slop.png<>uid://u6f2lf8wuy6w::::res://castle_ui/Sprite Sheet 1.png<>uid://cga360lgudij3::::res://castle_ui/bg_long.png<>uid://cniiaykfena2h::::res://castle_ui/Sprite Sheet 2.png<>uid://b1s87wnldsee7::::res://images/bg_designs/pilar1.png<>uid://c2xdansa7f3y0::::res://images/gui/healthbar.png<>uid://c5dpmccf804dl::::res://sprites/enemy_sprites/enemy_goblini.tscn<>uid://bpo1wog1qwc8x::::res://images/gui/healthbar_progress.png<>res://HealthBar.gd<>uid://cep2krsq22ntt::::res://sprites/enemy_sprites/enemy_bird.tscn<>uid://bsvxi2kftp0ro::::res://images/gui/circle.png<>uid://dhlvwssyvoth8::::res://mons.tscn<>res://LevelExp.gd<>uid://brm1t2uo6pgcu::::res://fonts/alagard.ttf<>res://level_label.gd<>res://Health.gd<>uid://csk4qehqjitqm::::res://images/gui/healthbar_transparent.png<>uid://c71rki1cm3bo4::::res://images/gui/skill_gui.png<>uid://by8toenblh7os::::res://gui/dash.tscn<>uid://dlfsep6h1p3iu::::res://gui/texture_button.tscn<>uid://c43pf2i61vbxt::::res://gui/range1_button.tscn<>uid://dg6nqs1ihxg32::::res://gui/range2_button.tscn<>uid://3jacesxdxik5::::res://images/gui/skill_gui_trans.png<>uid://dvlk7rmwc5wc2::::res://audio/heroic-story-inspiring-theme-9716.mp3
 DamageIndicator.gd::GDScript::-1::1702729481::0::1::::<>Node2D<>::
-fire_arrow.gd::GDScript::-1::1703147059::0::1::::<>CharacterBody2D<>::
-fire_arrow.tscn::PackedScene::6078805450592094980::1703093488::0::1::::<><>::res://fire_arrow.gd<>uid://dg0hbwa8awfkh
-fire_magic.tscn::PackedScene::6691569182959239272::1703092871::0::1::::<><>::res://sprites/hero_sprite/FireMagic.gd<>uid://cxon6avt2momb
-global.gd::GDScript::-1::1703192437::0::1::::<>Node<>::
+fire_arrow.gd::GDScript::-1::1703219374::0::1::::<>CharacterBody2D<>::
+fire_arrow.tscn::PackedScene::6078805450592094980::1703223794::0::1::::<><>::res://fire_arrow.gd<>uid://dg0hbwa8awfkh::::res://movements/attacks/Charge_2.png<>uid://bvacloex4aefs::::res://audio/skills/arrow.wav
+fire_magic.tscn::PackedScene::6691569182959239272::1703219156::0::1::::<><>::res://sprites/hero_sprite/FireMagic.gd<>uid://cxon6avt2momb::::res://movements/attacks/Charge_1.png<>uid://b0pl68qn0kqs6::::res://audio/skills/fire_magic.wav
+game_over.tscn::PackedScene::651544972304320027::1703225831::0::1::::<><>::res://Menu.gd<>uid://d1vcut60r77s4::::res://images/gui/images (17).jpeg<>uid://bul7pln2qf86v::::res://images/logo.png<>uid://dt4gdd0e7yu32::::res://fonts/8-BIT WONDER.TTF<>uid://dvlk7rmwc5wc2::::res://audio/heroic-story-inspiring-theme-9716.mp3
+global.gd::GDScript::-1::1703223793::0::1::::<>Node<>::
 Health.gd::GDScript::-1::1702972722::0::1::::<>Label<>::
 HealthBar.gd::GDScript::-1::1702972021::0::1::::<>TextureProgressBar<>::
 hit_effect.gd::GDScript::-1::1703176825::0::1::::<>CharacterBody2D<>::
@@ -14,18 +16,19 @@ hit_effect.tscn::PackedScene::3051571224488572934::1702985533::0::1::::<><>::uid
 icon.svg::CompressedTexture2D::2333649811887571586::1701609169::1701609182::1::::<><>::
 LevelExp.gd::GDScript::-1::1702971411::0::1::::<>TextureProgressBar<>::
 level_label.gd::GDScript::-1::1702054305::0::1::::<>Label<>::
-main.dialogue::Resource::1519588000712012091::1703169080::1703169080::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
-main_scene.gd::GDScript::-1::1703190619::0::1::::<>Node2D<>::
-main_scene.tscn::PackedScene::1669283979411470694::1703192474::0::1::::<><>::uid://bbf2k0mp0tsc3::::res://images/background/orig  long.png<>res://main_scene.gd<>uid://d0prfais6v0l0::::res://sprites/hero_sprite/hero.tscn<>uid://b0mga28lj3ruh::::res://sprites/npc_sprites/injured_knight.tscn<>uid://cgoklb7mwa7r8::::res://images/background/8 long.png<>uid://bkjj4lxhbj3ys::::res://images/background/8 long2.png<>uid://d3boywo6mhwmc::::res://sprites/object_sprites/cloud.tscn<>uid://cgexj6mj0thqn::::res://images/bg_designs/pilar6flip.png<>uid://c5dpmccf804dl::::res://sprites/enemy_sprites/enemy_goblini.tscn<>uid://bqnr15ay5755k::::res://images/bg_designs/pilar6.png<>uid://cep2krsq22ntt::::res://sprites/enemy_sprites/enemy_bird.tscn<>uid://dlfsep6h1p3iu::::res://gui/texture_button.tscn<>uid://d0771am6mbmbb::::res://sprites/npc_sprites/fairy.tscn<>uid://c2xdansa7f3y0::::res://images/gui/healthbar.png<>uid://cl23f5aao6fha::::res://images/bg_designs/pilar3.png<>uid://ig1y2lgm2cb2::::res://images/bg_designs/pilar5.png<>uid://bpo1wog1qwc8x::::res://images/gui/healthbar_progress.png<>res://HealthBar.gd<>uid://eju71jqqlyam::::res://images/bg_designs/pilar2.png<>uid://csk4qehqjitqm::::res://images/gui/healthbar_transparent.png<>uid://bsvxi2kftp0ro::::res://images/gui/circle.png<>uid://brm1t2uo6pgcu::::res://fonts/alagard.ttf<>res://level_label.gd<>res://LevelExp.gd<>uid://dhlvwssyvoth8::::res://mons.tscn<>res://Health.gd<>uid://c71rki1cm3bo4::::res://images/gui/skill_gui.png<>uid://by8toenblh7os::::res://gui/dash.tscn<>uid://dg6nqs1ihxg32::::res://gui/range2_button.tscn<>uid://c43pf2i61vbxt::::res://gui/range1_button.tscn<>uid://3jacesxdxik5::::res://images/gui/skill_gui_trans.png
-Menu.gd::GDScript::-1::1703179390::0::1::::<>Control<>::
-menu.tscn::PackedScene::1975222452063978943::1703192474::0::1::::<><>::res://Menu.gd<>uid://dt4gdd0e7yu32::::res://fonts/8-BIT WONDER.TTF<>uid://d1vcut60r77s4::::res://images/gui/images (17).jpeg
-mons.gd::GDScript::-1::1703186555::0::1::::<>CharacterBody2D<>::
-mons.tscn::PackedScene::7674607430500058651::1703186655::0::1::::<><>::res://mons.gd<>uid://sdhixb50mfmj::::res://images/enemy_sprites/enemy_mons/mons_attack.png<>uid://banmvpy83dsn8::::res://images/enemy_sprites/enemy_mons/mons_die.png<>uid://bh2x42mvyl3ys::::res://images/enemy_sprites/enemy_mons/mons_hurt.png<>uid://bvl61gcxp5j7d::::res://images/enemy_sprites/enemy_mons/mons_idle.png<>uid://cxvsmjyjkn8ho::::res://images/enemy_sprites/enemy_mons/mons_run.png<>uid://css1ibqjbisbw::::res://images/gui/enemy_health_bar_bg.png<>uid://db3tcbtqfvqh8::::res://images/gui/enemy_health_bar_trans.png<>uid://bpo1wog1qwc8x::::res://images/gui/healthbar_progress.png<>res://monsHealth.gd
+main.dialogue::Resource::1519588000712012091::1703226482::1703226483::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
+main_scene.gd::GDScript::-1::1703223737::0::1::::<>Node2D<>::
+main_scene.tscn::PackedScene::1669283979411470694::1703225478::0::1::::<><>::uid://bbf2k0mp0tsc3::::res://images/background/orig  long.png<>res://main_scene.gd<>uid://d0prfais6v0l0::::res://sprites/hero_sprite/hero.tscn<>uid://b0mga28lj3ruh::::res://sprites/npc_sprites/injured_knight.tscn<>uid://cgoklb7mwa7r8::::res://images/background/8 long.png<>uid://bkjj4lxhbj3ys::::res://images/background/8 long2.png<>uid://d3boywo6mhwmc::::res://sprites/object_sprites/cloud.tscn<>uid://cgexj6mj0thqn::::res://images/bg_designs/pilar6flip.png<>uid://c5dpmccf804dl::::res://sprites/enemy_sprites/enemy_goblini.tscn<>uid://bqnr15ay5755k::::res://images/bg_designs/pilar6.png<>uid://cep2krsq22ntt::::res://sprites/enemy_sprites/enemy_bird.tscn<>uid://dlfsep6h1p3iu::::res://gui/texture_button.tscn<>uid://d0771am6mbmbb::::res://sprites/npc_sprites/fairy.tscn<>uid://c2xdansa7f3y0::::res://images/gui/healthbar.png<>uid://cl23f5aao6fha::::res://images/bg_designs/pilar3.png<>uid://ig1y2lgm2cb2::::res://images/bg_designs/pilar5.png<>uid://bpo1wog1qwc8x::::res://images/gui/healthbar_progress.png<>res://HealthBar.gd<>uid://eju71jqqlyam::::res://images/bg_designs/pilar2.png<>uid://csk4qehqjitqm::::res://images/gui/healthbar_transparent.png<>uid://bsvxi2kftp0ro::::res://images/gui/circle.png<>uid://brm1t2uo6pgcu::::res://fonts/alagard.ttf<>res://level_label.gd<>res://LevelExp.gd<>uid://dhlvwssyvoth8::::res://mons.tscn<>res://Health.gd<>uid://c71rki1cm3bo4::::res://images/gui/skill_gui.png<>uid://by8toenblh7os::::res://gui/dash.tscn<>uid://dg6nqs1ihxg32::::res://gui/range2_button.tscn<>uid://c43pf2i61vbxt::::res://gui/range1_button.tscn<>uid://3jacesxdxik5::::res://images/gui/skill_gui_trans.png<>uid://dvlk7rmwc5wc2::::res://audio/heroic-story-inspiring-theme-9716.mp3
+Menu.gd::GDScript::-1::1703223550::0::1::::<>Control<>::
+menu.tscn::PackedScene::1975222452063978943::1703225479::0::1::::<><>::res://Menu.gd<>uid://dt4gdd0e7yu32::::res://fonts/8-BIT WONDER.TTF<>uid://d1vcut60r77s4::::res://images/gui/images (17).jpeg<>uid://bul7pln2qf86v::::res://images/logo.png<>uid://dvlk7rmwc5wc2::::res://audio/heroic-story-inspiring-theme-9716.mp3
+mons.gd::GDScript::-1::1703218442::0::1::::<>CharacterBody2D<>::
+mons.tscn::PackedScene::7674607430500058651::1703225479::0::1::::<><>::res://mons.gd<>uid://sdhixb50mfmj::::res://images/enemy_sprites/enemy_mons/mons_attack.png<>uid://banmvpy83dsn8::::res://images/enemy_sprites/enemy_mons/mons_die.png<>uid://bh2x42mvyl3ys::::res://images/enemy_sprites/enemy_mons/mons_hurt.png<>uid://bvl61gcxp5j7d::::res://images/enemy_sprites/enemy_mons/mons_idle.png<>uid://cxvsmjyjkn8ho::::res://images/enemy_sprites/enemy_mons/mons_run.png<>uid://css1ibqjbisbw::::res://images/gui/enemy_health_bar_bg.png<>uid://db3tcbtqfvqh8::::res://images/gui/enemy_health_bar_trans.png<>uid://bpo1wog1qwc8x::::res://images/gui/healthbar_progress.png<>res://monsHealth.gd
 monsHealth.gd::GDScript::-1::1703186149::0::1::::<>TextureProgressBar<>::
 poertal.tscn::PackedScene::6224424091768009744::1703187155::0::1::::<><>::
+game_over.gd::GDScript::-1::1703226224::0::1::::<>Control<>::
 Sprite Sheet 1.png::CompressedTexture2D::5456284724175550233::1703180072::1703180072::1::::<><>::
 TextureButton.gd::GDScript::-1::1703145781::0::1::::<>TextureButton<>::
-::res://addons/::1702888794
+::res://addons/::1703212094
 floating_number.tscn::PackedScene::4648462457419697043::1702888794::0::1::::<><>::uid://brm1t2uo6pgcu
 ::res://addons/dialogue_manager/::1701857679
 constants.gd::GDScript::-1::1701857678::0::1::::<>Node<>::
@@ -82,6 +85,26 @@ main_view.gd::GDScript::-1::1701857679::0::1::::<>Control<>::
 main_view.tscn::PackedScene::4884668666408697448::1701857679::0::1::::<><>::res://addons/dialogue_manager/views/main_view.gd<>uid://civ6shmka5e8u
 settings_view.gd::GDScript::-1::1701857679::0::1::::<>TabContainer<>::
 settings_view.tscn::PackedScene::5839841081119266502::1701857679::0::1::::<><>::res://addons/dialogue_manager/views/settings_view.gd
+::res://audio/::1703213681
+heroic-story-inspiring-theme-9716.mp3::AudioStreamMP3::8656601150543324167::1703212115::1703212474::1::::<><>::
+::res://audio/bird/::1703212099
+::res://audio/goblin/::1703212062
+::res://audio/mons/::1703212104
+::res://audio/skills/::1703226451
+arrow.wav::AudioStreamWAV::3860528220400160892::1703219905::1703220233::1::::<><>::
+bird_attack.wav::AudioStreamWAV::5330358993902101259::1703224654::1703224817::1::::<><>::
+bird_attack_hit.wav::AudioStreamWAV::2221097666846208739::1703224735::1703224817::1::::<><>::
+bird_die.wav::AudioStreamWAV::1301107923821795759::1703224143::1703224151::1::::<><>::
+dash.wav::AudioStreamWAV::3365400958824000370::1703220391::1703220274::1::::<><>::
+fire_magic.wav::AudioStreamWAV::4172832446098196675::1703219109::1703219137::1::::<><>::
+game_finished.wav::AudioStreamWAV::540296911184902076::1703226451::1703226451::1::::<><>::
+game_over.wav::AudioStreamWAV::1516318063043279915::1703226178::1703226180::1::::<><>::
+goblin_die.wav::AudioStreamWAV::8263162110000655921::1703216520::1703216528::1::::<><>::
+goblin_hit.wav::AudioStreamWAV::8038923120478646389::1703225057::1703225057::1::::<><>::
+magic_arrow.wav::AudioStreamWAV::459783710392438213::1703219308::1703219311::1::::<><>::
+melee.wav::AudioStreamWAV::4135354393788641262::1703218855::1703218920::1::::<><>::
+mons_attack.mp3::AudioStreamMP3::5219063005374698870::1703225657::1703225657::1::::<><>::
+mons_die.wav::AudioStreamWAV::3715831098045046666::1703225593::1703225657::1::::<><>::
 ::res://castle_ui/::1703187216
 bg_long.png::CompressedTexture2D::5195731194998978118::1703182468::1703182468::1::::<><>::
 long tiles.png::CompressedTexture2D::4339324352566595020::1703181798::1703181798::1::::<><>::
@@ -93,12 +116,12 @@ Sprite Sheet 2.png::CompressedTexture2D::5702298368896714981::1703187209::170318
 alagard.ttf::FontFile::3606017580189151128::1702054157::1702054162::1::::<><>::
 ::res://gui/::1703186654
 dash.gd::GDScript::-1::1703171284::0::1::::<>TextureButton<>::
-dash.tscn::PackedScene::4140256251103387958::1703170057::0::1::::<><>::uid://deq6sgy7ecl6w::::res://images/gui/Icon35.png<>res://gui/dash.gd
+dash.tscn::PackedScene::4140256251103387958::1703170057::0::1::::<><>::uid://deq6sgy7ecl6w
 range1_button.gd::GDScript::-1::1703171284::0::1::::<>TextureButton<>::
-range1_button.tscn::PackedScene::6867041525796795853::1703186654::0::1::::<><>::uid://bcfhbrcrgwgqm::::res://images/gui/range1.png<>res://gui/range1_button.gd
+range1_button.tscn::PackedScene::6867041525796795853::1703186654::0::1::::<><>::uid://bcfhbrcrgwgqm
 range2_button.gd::GDScript::-1::1703171284::0::1::::<>TextureButton<>::
-range2_button.tscn::PackedScene::7645209702850759955::1703170965::0::1::::<><>::uid://bchfgkyntplkf::::res://images/gui/range2.png<>res://gui/range2_button.gd
-texture_button.tscn::PackedScene::7942762105005978188::1703170074::0::1::::<><>::uid://dy3xt2wq2fnxh::::res://images/gui/melee1.png<>res://gui/texture_button_attack.gd
+range2_button.tscn::PackedScene::7645209702850759955::1703170965::0::1::::<><>::uid://bchfgkyntplkf
+texture_button.tscn::PackedScene::7942762105005978188::1703170074::0::1::::<><>::uid://dy3xt2wq2fnxh
 texture_button_attack.gd::GDScript::-1::1703171284::0::1::::<>TextureButton<>::
 texture_button_dash.gd::GDScript::-1::1703145671::0::1::::<>TextureButton<>::
 ::res://images/::1703192782
@@ -147,7 +170,7 @@ mons_die.png::CompressedTexture2D::2414024526543562267::1703185249::1703185261::
 mons_hurt.png::CompressedTexture2D::2934930505030600746::1703185249::1703185261::1::::<><>::
 mons_idle.png::CompressedTexture2D::3885023532099686439::1703185249::1703185261::1::::<><>::
 mons_run.png::CompressedTexture2D::6431651549501146152::1703185249::1703185261::1::::<><>::
-::res://images/gui/::1703187215
+::res://images/gui/::1703213705
 circle.png::CompressedTexture2D::3694584013029491708::1702969167::1702969170::1::::<><>::
 enemy_health_bar_bg.png::CompressedTexture2D::6074992358257839472::1702700999::1702701029::1::::<><>::
 enemy_health_bar_trans.png::CompressedTexture2D::7288410748890508551::1702701024::1702701029::1::::<><>::
@@ -159,7 +182,9 @@ images (17).jpeg::CompressedTexture2D::9027682115359519601::1703186837::17031868
 melee1.png::CompressedTexture2D::8903028749302987041::1703087683::1703087715::1::::<><>::
 range1.png::CompressedTexture2D::2537547961250588532::1703087639::1703087696::1::::<><>::
 range2.png::CompressedTexture2D::2541563877900306893::1703087592::1703087708::1::::<><>::
+skill_gui2.png::CompressedTexture2D::2250399736314404460::1703213098::1703213705::1::::<><>::
 skill_gui.png::CompressedTexture2D::7073608692684596445::1703144605::1703144607::1::::<><>::
+skill_gui_trans2.png::CompressedTexture2D::1750184537395291544::1703213070::1703213705::1::::<><>::
 skill_gui_trans.png::CompressedTexture2D::1983870832189071962::1703144595::1703144607::1::::<><>::
 ::res://movements/::1702823946
 ::res://movements/attack1/::1702565633
@@ -224,29 +249,29 @@ spritte22_06.png::CompressedTexture2D::4635222285551886985::1701851918::17018519
 spritte22_07.png::CompressedTexture2D::3469419114642509117::1701851918::1701851918::1::::<><>::
 spritte22_08.png::CompressedTexture2D::4114703108086350789::1701851918::1701851918::1::::<><>::
 ::res://sprites/::1701962678
-::res://sprites/enemy_sprites/::1703192474
+::res://sprites/enemy_sprites/::1703225479
 birdHealth.gd::GDScript::-1::1703069828::0::1::::<>TextureProgressBar<>::
-DamageIndicator.gd::GDScript::-1::1703136812::0::1::::<>Marker2D<>::
-enemy_bird.gd::GDScript::-1::1703133545::0::1::::<>CharacterBody2D<>::
-enemy_bird.tscn::PackedScene::5086220546460528469::1703092871::0::1::::<><>::uid://cmx6sftbnjdh6
-enemy_bird_fire.gd::GDScript::-1::1703173008::0::1::::<>CharacterBody2D<>::
-enemy_bird_fire.tscn::PackedScene::3005773818328296604::1703075035::0::1::::<><>::res://sprites/enemy_sprites/enemy_bird_fire.gd<>uid://bhk2p6sr7ehhj
-enemy_goblini.gd::GDScript::-1::1703178091::0::1::::<>CharacterBody2D<>::
-enemy_goblini.tscn::PackedScene::6885632102616310237::1703192474::0::1::::<><>::res://sprites/enemy_sprites/enemy_goblini.gd<>uid://0x1qvamaeqod::::res://images/enemy_sprites/gobline_idle.png<>uid://cduvucndpqa2d::::res://images/enemy_sprites/goblinr.png<>uid://b5i0sgl073cit::::res://images/enemy_sprites/attack.png<>uid://0a0tr6pqfgjb::::res://images/enemy_sprites/gobline_idle_hammer.png<>uid://8cpgkwj0wu70::::res://images/enemy_sprites/die.png<>uid://c6fm3vodph6o3::::res://images/enemy_sprites/hurt.png<>uid://bgmahbjk8yng0::::res://images/enemy_sprites/run.png<>uid://css1ibqjbisbw::::res://images/gui/enemy_health_bar_bg.png<>uid://bpo1wog1qwc8x::::res://images/gui/healthbar_progress.png<>res://sprites/enemy_sprites/goblinHealth.gd<>uid://db3tcbtqfvqh8::::res://images/gui/enemy_health_bar_trans.png<>res://sprites/enemy_sprites/DamageIndicator.gd
+DamageIndicator.gd::GDScript::-1::1703210008::0::1::::<>Marker2D<>::
+enemy_bird.gd::GDScript::-1::1703225478::0::1::::<>CharacterBody2D<>::
+enemy_bird.tscn::PackedScene::5086220546460528469::1703225479::0::1::::<><>::uid://cmx6sftbnjdh6::::res://images/enemy_sprites/enemy_bird/attack.png<>res://sprites/enemy_sprites/enemy_bird.gd<>uid://bi3awj6h0uvds::::res://sprites/enemy_sprites/enemy_bird_fire.tscn<>uid://dwkdibeynf2ww::::res://images/enemy_sprites/enemy_bird/enemy_fly.png<>uid://dxmwe84kqrc43::::res://images/enemy_sprites/enemy_bird/bird_die.png<>uid://css1ibqjbisbw::::res://images/gui/enemy_health_bar_bg.png<>uid://dqeyun0jcp3ea::::res://images/enemy_sprites/enemy_bird/bird_hurt.png<>uid://db3tcbtqfvqh8::::res://images/gui/enemy_health_bar_trans.png<>uid://bpo1wog1qwc8x::::res://images/gui/healthbar_progress.png<>res://sprites/enemy_sprites/birdHealth.gd<>uid://ch7ch7loas588::::res://audio/skills/bird_attack.wav
+enemy_bird_fire.gd::GDScript::-1::1703225478::0::1::::<>CharacterBody2D<>::
+enemy_bird_fire.tscn::PackedScene::3005773818328296604::1703225479::0::1::::<><>::res://sprites/enemy_sprites/enemy_bird_fire.gd<>uid://bhk2p6sr7ehhj::::res://images/enemy_sprites/enemy_bird/fireball.png<>uid://be4irawxjmky::::res://images/enemy_sprites/enemy_bird/fire.png<>uid://1kkc14003pak::::res://images/enemy_sprites/enemy_bird/ezgif.com-crop (17).png<>uid://6v6fidov74a6::::res://audio/skills/bird_attack_hit.wav<>uid://ch7ch7loas588::::res://audio/skills/bird_attack.wav
+enemy_goblini.gd::GDScript::-1::1703225158::0::1::::<>CharacterBody2D<>::
+enemy_goblini.tscn::PackedScene::6885632102616310237::1703225478::0::1::::<><>::res://sprites/enemy_sprites/enemy_goblini.gd<>uid://0x1qvamaeqod::::res://images/enemy_sprites/gobline_idle.png<>uid://cduvucndpqa2d::::res://images/enemy_sprites/goblinr.png<>uid://b5i0sgl073cit::::res://images/enemy_sprites/attack.png<>uid://0a0tr6pqfgjb::::res://images/enemy_sprites/gobline_idle_hammer.png<>uid://8cpgkwj0wu70::::res://images/enemy_sprites/die.png<>uid://c6fm3vodph6o3::::res://images/enemy_sprites/hurt.png<>uid://bgmahbjk8yng0::::res://images/enemy_sprites/run.png<>uid://css1ibqjbisbw::::res://images/gui/enemy_health_bar_bg.png<>uid://bpo1wog1qwc8x::::res://images/gui/healthbar_progress.png<>res://sprites/enemy_sprites/goblinHealth.gd<>uid://db3tcbtqfvqh8::::res://images/gui/enemy_health_bar_trans.png<>res://sprites/enemy_sprites/DamageIndicator.gd<>uid://dpy0cqa7ofrg0::::res://audio/skills/goblin_die.wav<>uid://dmsd5ia1eyswb::::res://audio/skills/goblin_hit.wav
 goblinHealth.gd::GDScript::-1::1703071059::0::1::::<>TextureProgressBar<>::
 Health.gd::GDScript::-1::1703063040::0::1::::<>TextureProgressBar<>::
 Line2D.gd::GDScript::-1::1703059128::0::1::::<>Line2D<>::
-::res://sprites/hero_sprite/::1703192474
+::res://sprites/hero_sprite/::1703225478
 CollisionShape2D.gd::GDScript::-1::1702657880::0::1::::<>CollisionShape2D<>::
 facing_collision.gd::GDScript::-1::1702658034::0::1::::<>CollisionShape2D<>::
 Fire.gd::GDScript::-1::1702881121::0::1::::<>Area2D<>::
-FireMagic.gd::GDScript::-1::1703153346::0::1::::<>CharacterBody2D<>::
-hero.gd::GDScript::-1::1703192437::0::1::::<>CharacterBody2D<>::
-hero.tscn::PackedScene::8945989939406117835::1703192474::0::1::::<><>::res://sprites/hero_sprite/hero.gd<>uid://c2lpfw2vjwwk3::::res://fire_magic.tscn<>uid://b7ypahj1sjdan::::res://movements/dead/sprites_145.png<>uid://b7yi8xd0p2uls::::res://movements/jump/sprites_116.png<>uid://csuvbjrwt8r5m::::res://fire_arrow.tscn<>uid://bf3i60vlr2kxk::::res://movements/attack1/sprites_49.png<>uid://b62jp0rookqa5::::res://movements/attacks/Magic_arrow.png<>uid://brn8ss0hkdqf8::::res://movements/attack1/sprites_50.png<>uid://c7d7v2bgls4n6::::res://movements/jump/sprites_117.png<>uid://lkei8ujp0eev::::res://movements/dead/sprites_146.png<>uid://de6fgyfcj7v0n::::res://movements/idle/iddle_01.png<>uid://bty61l1580jk8::::res://movements/attack1/sprites_51.png<>uid://bjhleru8t452e::::res://movements/dead/sprites_147.png<>uid://bmeswr4o3p3qn::::res://movements/idle/iddle_02.png<>uid://bk1su8hjfioxa::::res://movements/attack1/sprites_52.png<>uid://pguo3vm216i6::::res://movements/dead/sprites_148.png<>uid://dsly0lw12jsqf::::res://movements/idle/iddle_03.png<>uid://dxbtqhlbxkwv2::::res://movements/attack1/sprites_53.png<>uid://bm4atoahox14f::::res://movements/attack1/sprites_54.png<>uid://p82vxy6hfqbj::::res://movements/idle/iddle_04.png<>uid://dbbkmsttiaex2::::res://movements/attack1/sprites_55.png<>uid://bmgn2t0msjb4a::::res://movements/idle/iddle_07.png<>uid://dwn0p30o76kye::::res://movements/idle/iddle_08.png<>uid://1dj8idqb1ov4::::res://movements/idle_left/sprites_01 copy 2.png<>uid://bxo05hyrypvdq::::res://movements/idle_left/sprites_01 copy 3.png<>uid://dm28f3havikd4::::res://movements/idle_left/sprites_01 copy 4.png<>uid://bqh70ptbnl7qf::::res://movements/idle_left/sprites_01 copy 5.png<>uid://dmtx4j5qsl21q::::res://movements/idle_left/sprites_01 copy 6.png<>uid://5g4b7qijtat5::::res://movements/idle_left/sprites_01 copy 7.png<>uid://bsnaitk3iregr::::res://movements/idle_left/sprites_01 copy 8.png<>uid://co5ed3xpuycf0::::res://movements/idle_left/sprites_01 copy.png<>uid://de74rneiwtw18::::res://movements/jump/sprites_119.png<>uid://cjhjd5e3c0pes::::res://movements/jump/sprites_120.png<>uid://cyopkbhe4h616::::res://movements/jump/sprites_118.png<>uid://caxjmntead81x::::res://movements/jump/sprites_113.png<>uid://b4iiromxbh6x::::res://movements/jump/sprites_117-2.png<>uid://vr8xavhx34nn::::res://movements/run/spritte22_01.png<>uid://bubo8eoamq0j7::::res://movements/run/spritte22_02.png<>uid://beo1e2ea2e4v4::::res://movements/run/spritte22_03.png<>uid://boh6lctepy2su::::res://movements/run/spritte22_04.png<>uid://00063iutftr8::::res://movements/run/spritte22_05.png<>uid://b7blo0rg04axd::::res://movements/run/spritte22_06.png<>uid://bpou3c1ltp4yr::::res://movements/run/spritte22_07.png<>uid://byvgtah5u0tov::::res://movements/run/spritte22_08.png<>uid://d0km3m4pwkltx::::res://movements/attacks/Attack_2.png<>uid://d0v3fr7i3i07v::::res://movements/attacks/Magic_sphere.png<>uid://5l7qcrkntuem::::res://movements/attacks/Magic_sphere_jump.png<>uid://bjqg6xwi0xxr7::::res://hit_effect.tscn
+FireMagic.gd::GDScript::-1::1703219032::0::1::::<>CharacterBody2D<>::
+hero.gd::GDScript::-1::1703219748::0::1::::<>CharacterBody2D<>::
+hero.tscn::PackedScene::8945989939406117835::1703225478::0::1::::<><>::res://sprites/hero_sprite/hero.gd<>uid://c2lpfw2vjwwk3::::res://fire_magic.tscn<>uid://b7ypahj1sjdan::::res://movements/dead/sprites_145.png<>uid://b7yi8xd0p2uls::::res://movements/jump/sprites_116.png<>uid://csuvbjrwt8r5m::::res://fire_arrow.tscn<>uid://bf3i60vlr2kxk::::res://movements/attack1/sprites_49.png<>uid://b62jp0rookqa5::::res://movements/attacks/Magic_arrow.png<>uid://brn8ss0hkdqf8::::res://movements/attack1/sprites_50.png<>uid://c7d7v2bgls4n6::::res://movements/jump/sprites_117.png<>uid://lkei8ujp0eev::::res://movements/dead/sprites_146.png<>uid://de6fgyfcj7v0n::::res://movements/idle/iddle_01.png<>uid://bty61l1580jk8::::res://movements/attack1/sprites_51.png<>uid://bjhleru8t452e::::res://movements/dead/sprites_147.png<>uid://bmeswr4o3p3qn::::res://movements/idle/iddle_02.png<>uid://bk1su8hjfioxa::::res://movements/attack1/sprites_52.png<>uid://pguo3vm216i6::::res://movements/dead/sprites_148.png<>uid://dsly0lw12jsqf::::res://movements/idle/iddle_03.png<>uid://dxbtqhlbxkwv2::::res://movements/attack1/sprites_53.png<>uid://bm4atoahox14f::::res://movements/attack1/sprites_54.png<>uid://p82vxy6hfqbj::::res://movements/idle/iddle_04.png<>uid://dbbkmsttiaex2::::res://movements/attack1/sprites_55.png<>uid://bmgn2t0msjb4a::::res://movements/idle/iddle_07.png<>uid://dwn0p30o76kye::::res://movements/idle/iddle_08.png<>uid://1dj8idqb1ov4::::res://movements/idle_left/sprites_01 copy 2.png<>uid://bxo05hyrypvdq::::res://movements/idle_left/sprites_01 copy 3.png<>uid://dm28f3havikd4::::res://movements/idle_left/sprites_01 copy 4.png<>uid://bqh70ptbnl7qf::::res://movements/idle_left/sprites_01 copy 5.png<>uid://dmtx4j5qsl21q::::res://movements/idle_left/sprites_01 copy 6.png<>uid://5g4b7qijtat5::::res://movements/idle_left/sprites_01 copy 7.png<>uid://bsnaitk3iregr::::res://movements/idle_left/sprites_01 copy 8.png<>uid://co5ed3xpuycf0::::res://movements/idle_left/sprites_01 copy.png<>uid://de74rneiwtw18::::res://movements/jump/sprites_119.png<>uid://cjhjd5e3c0pes::::res://movements/jump/sprites_120.png<>uid://cyopkbhe4h616::::res://movements/jump/sprites_118.png<>uid://caxjmntead81x::::res://movements/jump/sprites_113.png<>uid://b4iiromxbh6x::::res://movements/jump/sprites_117-2.png<>uid://vr8xavhx34nn::::res://movements/run/spritte22_01.png<>uid://bubo8eoamq0j7::::res://movements/run/spritte22_02.png<>uid://beo1e2ea2e4v4::::res://movements/run/spritte22_03.png<>uid://boh6lctepy2su::::res://movements/run/spritte22_04.png<>uid://00063iutftr8::::res://movements/run/spritte22_05.png<>uid://b7blo0rg04axd::::res://movements/run/spritte22_06.png<>uid://bpou3c1ltp4yr::::res://movements/run/spritte22_07.png<>uid://byvgtah5u0tov::::res://movements/run/spritte22_08.png<>uid://d0km3m4pwkltx::::res://movements/attacks/Attack_2.png<>uid://d0v3fr7i3i07v::::res://movements/attacks/Magic_sphere.png<>uid://5l7qcrkntuem::::res://movements/attacks/Magic_sphere_jump.png<>uid://bjqg6xwi0xxr7::::res://hit_effect.tscn<>uid://by6gxhgfxh3uo::::res://audio/skills/melee.wav<>uid://bn7hwrng4nex3::::res://audio/skills/dash.wav
 ::res://sprites/npc_sprites/::1703169993
 almost Dead.png::CompressedTexture2D::7210621332448924476::1701866522::1701962679::1::::<><>::
 fairy.gd::GDScript::-1::1703157482::0::1::::<>CharacterBody2D<>::
-fairy.tscn::PackedScene::8982032624532320123::1703169993::0::1::::<><>::res://sprites/npc_sprites/fairy.gd<>uid://sb5qj5m1aa0d::::res://sprites/npc_sprites/fairy_sprites/Idle1.png<>uid://5va7i4px44a3::::res://sprites/npc_sprites/fairy_sprites/Idle2.png<>uid://d2gs875lds4mm::::res://sprites/npc_sprites/fairy_sprites/Idle3.png<>uid://k6lrydkh14cm::::res://sprites/npc_sprites/fairy_sprites/Idle4.png<>uid://n1hdllu2y7ox::::res://sprites/npc_sprites/fairy_sprites/Idle5.png<>uid://c7dfehqg405rb::::res://sprites/npc_sprites/fairy_sprites/Idle6.png<>uid://n0k48mrbrscc::::res://sprites/npc_sprites/fairy_sprites/Idle7.png<>uid://bd4ulee0nkgsv::::res://sprites/npc_sprites/fairy_sprites/Idle8.png<>uid://8p2dsh2fb2kt::::res://sprites/npc_sprites/fairy_sprites/Idle9.png
+fairy.tscn::PackedScene::8982032624532320123::1703169993::0::1::::<><>::res://sprites/npc_sprites/fairy.gd<>uid://sb5qj5m1aa0d
 injured_knight.tscn::PackedScene::4166280079271163907::1702894567::0::1::::<><>::res://sprites/npc_sprties/injured_knight.gd<>uid://day446ebhv06c
 ::res://sprites/npc_sprites/fairy_sprites/::1703155200
 Idle1.png::CompressedTexture2D::1267314165358369397::1703155193::1703155200::1::::<><>::

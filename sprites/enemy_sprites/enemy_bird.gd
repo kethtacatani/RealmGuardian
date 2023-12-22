@@ -111,6 +111,7 @@ func _physics_process(delta):
 			var timer= $FireTimer
 			timer.start()
 			bird_fire.anim.play("fire")
+			$FireAudio.play()
 			fire_out_timer.start()
 			fire_out=false
 			anim_speed.speed_scale= randf_range(0.8,1.5)
@@ -130,6 +131,7 @@ func if_dead():
 		anim.play("dead")	
 		animation_locked=true
 		velocity.y= 1*300
+		$AudioStreamPlayer2D.play()
 		$DeadGone.start()
 
 func decrease_health():
@@ -174,6 +176,7 @@ func _on_animated_sprite_2d_animation_finished():
 	if(anim.animation=="hurt"):
 		animation_locked=false
 	if(anim.animation=="dead"):
+		velocity.y=50
 		dead=true				
 		animation_locked=false
 		global.player_add_exp(exp)

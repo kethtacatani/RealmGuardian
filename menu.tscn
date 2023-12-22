@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://3e2viy61t8xv"]
+[gd_scene load_steps=6 format=3 uid="uid://3e2viy61t8xv"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_ufa24"]
 [ext_resource type="FontFile" uid="uid://dt4gdd0e7yu32" path="res://fonts/8-BIT WONDER.TTF" id="2_owfn8"]
 [ext_resource type="Texture2D" uid="uid://d1vcut60r77s4" path="res://images/gui/images (17).jpeg" id="2_qfsa8"]
 [ext_resource type="Texture2D" uid="uid://bul7pln2qf86v" path="res://images/logo.png" id="3_sf4sc"]
+[ext_resource type="AudioStream" uid="uid://dvlk7rmwc5wc2" path="res://audio/heroic-story-inspiring-theme-9716.mp3" id="5_2ffoi"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -57,6 +58,9 @@ text = "Options"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_owfn8")
 text = "Exit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_2ffoi")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://c5dpmccf804dl"]
+[gd_scene load_steps=69 format=3 uid="uid://c5dpmccf804dl"]
 
 [ext_resource type="Script" path="res://sprites/enemy_sprites/enemy_goblini.gd" id="1_1r8fw"]
 [ext_resource type="Texture2D" uid="uid://0x1qvamaeqod" path="res://images/enemy_sprites/gobline_idle.png" id="1_akijq"]
@@ -13,6 +13,8 @@
 [ext_resource type="Script" path="res://sprites/enemy_sprites/goblinHealth.gd" id="10_0p6ft"]
 [ext_resource type="Texture2D" uid="uid://db3tcbtqfvqh8" path="res://images/gui/enemy_health_bar_trans.png" id="11_opdio"]
 [ext_resource type="Script" path="res://sprites/enemy_sprites/DamageIndicator.gd" id="12_5iwae"]
+[ext_resource type="AudioStream" uid="uid://dpy0cqa7ofrg0" path="res://audio/skills/goblin_die.wav" id="14_dptot"]
+[ext_resource type="AudioStream" uid="uid://dmsd5ia1eyswb" path="res://audio/skills/goblin_hit.wav" id="15_f6bsc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l6md3"]
 atlas = ExtResource("2_xyyt6")
@@ -488,6 +490,12 @@ script = ExtResource("10_0p6ft")
 
 [node name="TimerDead" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_dptot")
+
+[node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_f6bsc")
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_changed"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

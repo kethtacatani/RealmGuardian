@@ -70,6 +70,12 @@ func _ready():
 		vector_y=-8
 	anim.offset= Vector2(0,vector_y)
 func _physics_process(delta):
+	
+	if dead:
+		anim.play("dead_dead")
+		animation_locked=true
+		
+		return
 	# Add the gravity.
 	if not player_nearby():
 		return
@@ -77,7 +83,8 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		if_dead()
 #	print("random ",getRandomValue(0,9))
-	random_idle()
+	if not dead:
+		random_idle()
 	# Handle Jump.
 	
 	var movement = speed * delta * direction
@@ -103,7 +110,6 @@ func _physics_process(delta):
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	
 	move_and_slide()
 	check_teritory()
 
@@ -119,6 +125,7 @@ func _physics_process(delta):
 		
 			speed=0
 			animation_locked=true
+			$AttackAudio.play()
 		else:
 			if not animation_locked:
 				anim.play("runn")
@@ -173,6 +180,7 @@ func decrease_health():
 func if_dead():
 	if health==0 and not dead:
 		anim.play("dead")	
+		$DieAudio.play()
 		animation_locked=true
 
 func _on_area_2d_body_entered(body):
