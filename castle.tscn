@@ -980,7 +980,7 @@ position = Vector2(-1001, -1136.5)
 shape = SubResource("RectangleShape2D_wonvo")
 
 [node name="hero" parent="StaticBody2D" instance=ExtResource("1_x336s")]
-position = Vector2(4935, -1775)
+position = Vector2(-695, 223)
 scale = Vector2(2.671, 2.671)
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
