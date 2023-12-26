@@ -20,6 +20,7 @@ func _process(delta):
 		cooldown_time= global.range2_cooldown
 		timer.wait_time =cooldown_time
 		label.text="%0.1f" % cooldown_time+"s"
+		
 	
 	if not global.can_range2:
 		label.text= "%0.1f" % timer.time_left

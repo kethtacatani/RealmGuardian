@@ -670,6 +670,7 @@ stream = ExtResource("49_x5r2i")
 
 [node name="DashAudio" type="AudioStreamPlayer2D" parent="hero"]
 stream = ExtResource("50_k230e")
+volume_db = 10.0
 
 [node name="GameFinishAudio" type="AudioStreamPlayer2D" parent="hero"]
 stream = ExtResource("51_3ecym")

@@ -17,6 +17,7 @@ var health_bar
 var dead= false
 var default_gravity=1200
 var can_dash=true
+var on_castle=false
 
 
 
@@ -57,8 +58,15 @@ func _physics_process(delta):
 		global.new_game=false
 		DialogueManager.show_example_dialogue_balloon(load("res://main.dialogue"),"start")
 			
-	if global.is_on_castle:
+	if global.is_on_castle and not on_castle:
 		$CollisionShape2D/AnimatedSprite2D/Camera2D.limit_right = 6179
+		global.can_range2=true
+		global.can_melee1=true
+		global.can_range1=true
+		global.can_dash=true
+		speed=default_speed
+		on_castle=true
+		
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		was_in_air=true
@@ -72,6 +80,7 @@ func _physics_process(delta):
 		
 	if global.is_in_dialogue:
 		if is_on_floor():	
+			speed=default_speed
 			anim.play("idle")
 			animation_locked=false
 			return
@@ -219,7 +228,7 @@ func jump_anim():
 		else:
 			anim.play("jump_down_loop")
 			velocity.x = direction * speed*0.5
-			animation_locked=true
+#			animation_locked=true
 	
 	
 func jump():
