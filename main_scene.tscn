@@ -231,7 +231,7 @@ position = Vector2(6712, 468)
 scale = Vector2(5.71646, 5.71646)
 
 [node name="hero" parent="StaticBody2D" instance=ExtResource("1_o6tn1")]
-position = Vector2(16272, 167)
+position = Vector2(-537, 106)
 scale = Vector2(2.67137, 2.67137)
 
 [node name="notify" parent="StaticBody2D" instance=ExtResource("4_ue5xg")]
@@ -427,6 +427,6 @@ texture = ExtResource("31_xjjq3")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("32_kvk1q")
-volume_db = 1.0
+volume_db = 13.975
 
 [connection signal="body_entered" from="StaticBody2D/Portal" to="." method="_on_portal_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://d0prfais6v0l0"]
+[gd_scene load_steps=104 format=3 uid="uid://d0prfais6v0l0"]
 
 [ext_resource type="Script" path="res://sprites/hero_sprite/hero.gd" id="1_gu7lq"]
 [ext_resource type="PackedScene" uid="uid://c2lpfw2vjwwk3" path="res://fire_magic.tscn" id="2_3kfa1"]
@@ -51,6 +51,7 @@
 [ext_resource type="AudioStream" uid="uid://by6gxhgfxh3uo" path="res://audio/skills/melee.wav" id="49_x5r2i"]
 [ext_resource type="AudioStream" uid="uid://bn7hwrng4nex3" path="res://audio/skills/dash.wav" id="50_k230e"]
 [ext_resource type="AudioStream" uid="uid://hxyu1sfwqqlg" path="res://audio/skills/game_finished.wav" id="51_3ecym"]
+[ext_resource type="AudioStream" uid="uid://dvlk7rmwc5wc2" path="res://audio/heroic-story-inspiring-theme-9716.mp3" id="52_xp3mc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j8h5c"]
 radius = 7.68651
@@ -678,6 +679,10 @@ stream = ExtResource("51_3ecym")
 [node name="TimerDead" type="Timer" parent="hero"]
 wait_time = 2.0
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="hero"]
+stream = ExtResource("52_xp3mc")
+volume_db = 5.962
 
 [connection signal="animation_finished" from="hero/CollisionShape2D/AnimatedSprite2D" to="hero" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="hero/melee_attack1" to="hero" method="_on_melee_attack_1_area_entered"]

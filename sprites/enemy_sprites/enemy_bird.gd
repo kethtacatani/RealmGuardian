@@ -64,6 +64,9 @@ func _ready():
 
 func _physics_process(delta):
 	# Add the gravity
+	if dead:
+		if is_on_floor():
+			return
 	if not player_nearby():
 		return
 	if_dead()
@@ -130,9 +133,8 @@ func if_dead():
 	if health==0 and not dead:
 		anim.play("dead")	
 		animation_locked=true
-		velocity.y= 1*300
+		velocity.y= 300
 		$AudioStreamPlayer2D.play()
-		$DeadGone.start()
 
 func decrease_health():
 	global.enemy_hurt=true
@@ -418,6 +420,10 @@ func _on_hit_mark_body_entered(body):
 		speed=0
 		anim.play("dead_land")
 		animation_locked=true
+		remove_child($hit_mark)
+		$DeadGone.start()
+		
+		
 
 
 func _on_dead_gone_timeout():

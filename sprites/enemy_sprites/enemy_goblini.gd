@@ -71,6 +71,8 @@ func _ready():
 	anim.offset= Vector2(0,vector_y)
 func _physics_process(delta):
 	# Add the gravity.
+	if dead:
+		return
 	if not player_nearby():
 		return
 	if not is_on_floor():
@@ -177,7 +179,9 @@ func if_dead():
 	if health==0 and not dead:
 		$AudioStreamPlayer2D.play()
 		anim.play("dead")	
+		remove_child($hit_mark)
 		animation_locked=true
+		velocity.y= 300
 
 func _on_area_2d_body_entered(body):
 	if body.name=='hero':

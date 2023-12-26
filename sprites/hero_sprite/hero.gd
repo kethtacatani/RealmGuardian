@@ -28,6 +28,7 @@ var melee_area
 @onready var anim= get_node("CollisionShape2D/AnimatedSprite2D")
 
 func _ready():	
+	$AudioStreamPlayer2D.play()
 	if global.restart:
 		global.player_health=global.player_max_health
 		global.restart=false
@@ -35,7 +36,10 @@ func _ready():
 	global.player_direction=direction
 	melee_area=$melee_attack1
 	remove_child(melee_area)
-	
+	global.can_range2=true
+	global.can_melee1=true
+	global.can_range1=true
+	global.can_dash=true
 	
 
 func _physics_process(delta):
@@ -43,9 +47,6 @@ func _physics_process(delta):
 #	print("x: ",prevX)
 #	print("y: ",prevY)
 #	print(global_position)
-
-	
-		
 
 	if global.game_finished:
 		$GameFinishAudio.play()
@@ -186,6 +187,7 @@ func if_dead():
 			$TimerDead.start()
 			stop_move()
 			dead=true
+			speed=0
 			return
 		
 			

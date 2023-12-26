@@ -35,6 +35,7 @@ var healing=false
 
 
 
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 0
 
@@ -70,22 +71,22 @@ func _ready():
 		vector_y=-8
 	anim.offset= Vector2(0,vector_y)
 func _physics_process(delta):
+	# Add the gravity.
 	
 	if dead:
 		anim.play("dead_dead")
 		animation_locked=true
-		
 		return
-	# Add the gravity.
 	if not player_nearby():
 		return
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		if_dead()
 #	print("random ",getRandomValue(0,9))
-	if not dead:
-		random_idle()
+	random_idle()
 	# Handle Jump.
+	if health<=0:
+		return
 	
 	var movement = speed * delta * direction
 	position.x += movement
@@ -101,7 +102,7 @@ func _physics_process(delta):
 		else:
 				anim.flip_h=false
 				facing_right=true
-	
+
 
 	if not global.enemy_hurt and not healing:
 		timer_heal.start()
@@ -110,6 +111,7 @@ func _physics_process(delta):
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	
 	move_and_slide()
 	check_teritory()
 
@@ -179,8 +181,9 @@ func decrease_health():
 			
 func if_dead():
 	if health==0 and not dead:
-		anim.play("dead")	
 		$DieAudio.play()
+		anim.play("dead")	
+		remove_child($hit_mark)
 		animation_locked=true
 
 func _on_area_2d_body_entered(body):
@@ -209,7 +212,7 @@ func _on_animated_sprite_2d_animation_finished():
 	if(anim.animation=="dead"):
 		dead=true		
 		global.player_add_exp(exp)
-		$TimerDead.start()
+#		$TimerDead.start()
 		
 	if(anim.animation=="idle"):
 		animation_locked=false
@@ -306,15 +309,3 @@ func _on_timer_heal_timeout():
 
 func _on_timer_dead_timeout():
 	self.queue_free()
-
-
-func _on_teritory_right_body_exited(body):
-	pass # Replace with function body.
-
-
-func _on_hit_mark_area_exited(area):
-	pass # Replace with function body.
-
-
-func _on_hit_mark_body_entered(body):
-	pass # Replace with function body.

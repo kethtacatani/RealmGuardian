@@ -18,7 +18,7 @@ var range2_cooldown=10-((cooldown_reduction/100)*10)
 var dash_cooldown=5-((cooldown_reduction/100)*5)
 
 var game_finished=false
-var new_game=false
+var new_game=true
 var knight_dead=false
 var is_on_castle=false
 var fairy_talked=false
